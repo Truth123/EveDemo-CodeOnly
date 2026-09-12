@@ -96,7 +96,25 @@ InitTestScene*.unity*
 # /Assets/AddressableAssetsData/OSX/addressables_content_state.bin
 /[Aa]ssets/AddressableAssetsData/*/*.bin*
 /[Aa]ssets/ThirtPartyModel/
+/[Aa]ssets/ThirtPartyModel.meta
 /[Aa]ssets/TutorialInfo/
+/[Aa]ssets/TutorialInfo.meta
+/[Aa]ssets/Animator/
+/[Aa]ssets/Animator.meta
+/[Aa]ssets/Audio/
+/[Aa]ssets/Audio.meta
+/[Aa]ssets/Materials/
+/[Aa]ssets/Materials.meta
+/[Aa]ssets/Meshes/
+/[Aa]ssets/Meshes.meta
+/[Aa]ssets/Prefabs/
+/[Aa]ssets/Prefabs.meta
+/[Aa]ssets/Textures/
+/[Aa]ssets/Textures.meta
+/[Aa]ssets/UI/
+/[Aa]ssets/UI.meta
+/[Aa]ssets/VFX/
+/[Aa]ssets/VFX.meta
 
 # Visual Scripting auto-generated files
 /[Aa]ssets/Unity.VisualScripting.Generated/VisualScripting.Flow/UnitOptions.db
@@ -109,7 +127,9 @@ InitTestScene*.unity*
 
 doc/.obsidian/
 doc/player_state_design_core_docs/
+doc/未命名.base
 
 .codex/
 .codex_deps/
+.agents
 otherSource/
