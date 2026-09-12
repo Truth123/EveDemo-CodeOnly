@@ -1,0 +1,156 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 815bc1a242b7df64cbd47452fd025fcb, type: 3}
+  m_Name: Evade_Perfect
+  m_EditorClassIdentifier: ProjectEVE.Runtime::ProjectEVE.Combat.Timeline.PlayerEvadeTimelineAsset
+  owner: 0
+  actionKind: 2
+  actionId: Evade_Perfect
+  displayName: Perfect Evade
+  animationStateName: Anim_PerfectEvade
+  totalFrames: 102
+  totalDuration: 1.7
+  frameRate: 60
+  tracks:
+  - Name: Defense
+    TrackKind: 4
+    Locked: 0
+    Muted: 0
+    Clips:
+    - rid: 3564762341354242438
+  - Name: Cancel
+    TrackKind: 3
+    Locked: 0
+    Muted: 0
+    Clips:
+    - rid: 3564762341354242439
+    - rid: 3564762341354242440
+    - rid: 3564762341354242441
+    - rid: 3564762341354242442
+    - rid: 3564762341354242443
+  - Name: Motion
+    TrackKind: 6
+    Locked: 0
+    Muted: 0
+    Clips:
+    - rid: 3564762341354242444
+    - rid: 3564762341354242445
+    - rid: 3564762341354242446
+    - rid: 3564762341354242447
+  - Name: Animation Preview
+    TrackKind: 12
+    Locked: 0
+    Muted: 0
+    Clips:
+    - rid: 3564762341354242448
+  references:
+    version: 2
+    RefIds:
+    - rid: 3564762341354242438
+      type: {class: CombatDefenseWindowClip, ns: ProjectEVE.Combat.Timeline, asm: ProjectEVE.Runtime}
+      data:
+        Name: Invincible
+        CapabilityId: 12
+        StartTime: 0
+        EndTime: 1
+    - rid: 3564762341354242439
+      type: {class: CombatAttackWindowClip, ns: ProjectEVE.Combat.Timeline, asm: ProjectEVE.Runtime}
+      data:
+        Name: SkillBuffer
+        CapabilityId: 7
+        StartTime: 1
+        EndTime: 1.1333333
+    - rid: 3564762341354242440
+      type: {class: CombatCancelWindowClip, ns: ProjectEVE.Combat.Timeline, asm: ProjectEVE.Runtime}
+      data:
+        Name: SkillCancel
+        CapabilityId: 8
+        StartTime: 1.1333333
+        EndTime: 1.7
+    - rid: 3564762341354242441
+      type: {class: CombatCancelWindowClip, ns: ProjectEVE.Combat.Timeline, asm: ProjectEVE.Runtime}
+      data:
+        Name: GuardCancel
+        CapabilityId: 9
+        StartTime: 1.1333333
+        EndTime: 1.7
+    - rid: 3564762341354242442
+      type: {class: CombatCancelWindowClip, ns: ProjectEVE.Combat.Timeline, asm: ProjectEVE.Runtime}
+      data:
+        Name: AttackReset
+        CapabilityId: 10
+        StartTime: 1
+        EndTime: 1.7
+    - rid: 3564762341354242443
+      type: {class: CombatCancelWindowClip, ns: ProjectEVE.Combat.Timeline, asm: ProjectEVE.Runtime}
+      data:
+        Name: MovementReturn
+        CapabilityId: 11
+        StartTime: 1.2
+        EndTime: 1.7
+    - rid: 3564762341354242444
+      type: {class: CombatMotionReferenceClip, ns: ProjectEVE.Combat.Timeline, asm: ProjectEVE.Runtime}
+      data:
+        Name: PerfectEvadeForward
+        CapabilityId: 0
+        StartTime: 0
+        EndTime: 1.2083334
+        MotionKind: 6
+        PlayerMotionId: 20
+        BossAttackId: 
+        ProfileWindowName: 
+    - rid: 3564762341354242445
+      type: {class: CombatMotionReferenceClip, ns: ProjectEVE.Combat.Timeline, asm: ProjectEVE.Runtime}
+      data:
+        Name: PerfectEvadeBackward
+        CapabilityId: 0
+        StartTime: 0
+        EndTime: 0.8333333
+        MotionKind: 6
+        PlayerMotionId: 21
+        BossAttackId: 
+        ProfileWindowName: 
+    - rid: 3564762341354242446
+      type: {class: CombatMotionReferenceClip, ns: ProjectEVE.Combat.Timeline, asm: ProjectEVE.Runtime}
+      data:
+        Name: PerfectEvadeLeft
+        CapabilityId: 0
+        StartTime: 0
+        EndTime: 0.8333333
+        MotionKind: 6
+        PlayerMotionId: 22
+        BossAttackId: 
+        ProfileWindowName: 
+    - rid: 3564762341354242447
+      type: {class: CombatMotionReferenceClip, ns: ProjectEVE.Combat.Timeline, asm: ProjectEVE.Runtime}
+      data:
+        Name: PerfectEvadeRight
+        CapabilityId: 0
+        StartTime: 0
+        EndTime: 0.875
+        MotionKind: 6
+        PlayerMotionId: 23
+        BossAttackId: 
+        ProfileWindowName: 
+    - rid: 3564762341354242448
+      type: {class: CombatAnimationClipWindow, ns: ProjectEVE.Combat.Timeline, asm: ProjectEVE.Runtime}
+      data:
+        Name: Animation Preview
+        CapabilityId: 0
+        StartTime: 0
+        EndTime: 1.75
+        PreviewAnimationClip: {fileID: 1590963712889315262, guid: f295e8fb3a774ae4e8fb63181a4fb79b, type: 3}
+        AnimatorStateName: Anim_PerfectEvade
+        ClipStartOffset: 0
+        ClipEndOffset: 1.75
+        ClipSpeed: 1
+        LoopPreview: 0

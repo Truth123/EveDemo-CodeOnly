@@ -1,0 +1,19 @@
+{
+  "name": "ProjectEVE.Tests.PlayMode",
+  "rootNamespace": "ProjectEVE.Tests.PlayMode",
+  "references": [
+    "ProjectEVE.Runtime"
+  ],
+  "includePlatforms": [],
+  "excludePlatforms": [],
+  "allowUnsafeCode": false,
+  "overrideReferences": false,
+  "precompiledReferences": [],
+  "autoReferenced": false,
+  "defineConstraints": [],
+  "versionDefines": [],
+  "noEngineReferences": false,
+  "optionalUnityReferences": [
+    "TestAssemblies"
+  ]
+}

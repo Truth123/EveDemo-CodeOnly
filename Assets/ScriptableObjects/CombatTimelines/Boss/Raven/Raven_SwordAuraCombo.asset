@@ -1,0 +1,193 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 87ed626447c4b0443a3db65cbe19370e, type: 3}
+  m_Name: Raven_SwordAuraCombo
+  m_EditorClassIdentifier: ProjectEVE.Runtime::ProjectEVE.Combat.Timeline.BossAttackTimelineAsset
+  owner: 1
+  actionKind: 4
+  actionId: Raven_SwordAuraCombo
+  displayName: SwordAuraCombo
+  animationStateName: M_Raven_SwordAuraCombo
+  totalFrames: 270
+  totalDuration: 4.5
+  frameRate: 60
+  tracks:
+  - Name: HitNode
+    TrackKind: 1
+    Locked: 0
+    Muted: 0
+    Clips:
+    - rid: 117198392379834674
+    - rid: 117198392379834675
+    - rid: 117198392379834676
+  - Name: Interrupt
+    TrackKind: 13
+    Locked: 0
+    Muted: 0
+    Clips:
+    - rid: 117198542615609432
+    - rid: 117198542615609433
+  - Name: Motion Profile
+    TrackKind: 7
+    Locked: 0
+    Muted: 0
+    Clips:
+    - rid: 117198542615609553
+    - rid: 117198542615609554
+    - rid: 117198542615609555
+  - Name: Animation Preview
+    TrackKind: 12
+    Locked: 0
+    Muted: 0
+    Clips:
+    - rid: 117198392379834678
+  angleLimit: 90
+  cooldown: 6
+  naturalRecoveryDuration: 1
+  defenseRewardRules:
+  - Name: FinalPE
+    RewardDuration: 1.4
+    Conditions:
+    - HitNodeId: SwordAuraCombo_3
+      AllowedOutcomes: 2
+  references:
+    version: 2
+    RefIds:
+    - rid: 117198392379834674
+      type: {class: CombatHitNodeClip, ns: ProjectEVE.Combat.Timeline, asm: ProjectEVE.Runtime}
+      data:
+        Name: SwordAuraCombo_1
+        CapabilityId: 2
+        StartTime: 0.56666666
+        EndTime: 0.65
+        AttackType: 1
+        ReactionIntent: 1
+        Damage: 24
+        PoiseDamage: 18
+        GuardDamage: 0
+        CanBeGuarded: 0
+        CanBePerfectGuarded: 0
+        CanBePerfectEvaded: 1
+        MaxHitsPerTarget: 1
+        EffectiveRange: 20
+        EffectiveAngle: 180
+        TriggersPerfectGuardBossStagger: 0
+        HitIndex: 1
+        SourcePart: 8
+    - rid: 117198392379834675
+      type: {class: CombatHitNodeClip, ns: ProjectEVE.Combat.Timeline, asm: ProjectEVE.Runtime}
+      data:
+        Name: SwordAuraCombo_2
+        CapabilityId: 2
+        StartTime: 0.8333333
+        EndTime: 0.9
+        AttackType: 1
+        ReactionIntent: 1
+        Damage: 24
+        PoiseDamage: 18
+        GuardDamage: 0
+        CanBeGuarded: 0
+        CanBePerfectGuarded: 0
+        CanBePerfectEvaded: 1
+        MaxHitsPerTarget: 1
+        EffectiveRange: 20
+        EffectiveAngle: 180
+        TriggersPerfectGuardBossStagger: 0
+        HitIndex: 2
+        SourcePart: 8
+    - rid: 117198392379834676
+      type: {class: CombatHitNodeClip, ns: ProjectEVE.Combat.Timeline, asm: ProjectEVE.Runtime}
+      data:
+        Name: SwordAuraCombo_3
+        CapabilityId: 2
+        StartTime: 2.0666666
+        EndTime: 2.1833334
+        AttackType: 1
+        ReactionIntent: 2
+        Damage: 34
+        PoiseDamage: 28
+        GuardDamage: 0
+        CanBeGuarded: 0
+        CanBePerfectGuarded: 0
+        CanBePerfectEvaded: 1
+        MaxHitsPerTarget: 1
+        EffectiveRange: 20
+        EffectiveAngle: 180
+        TriggersPerfectGuardBossStagger: 0
+        HitIndex: 3
+        SourcePart: 8
+    - rid: 117198392379834678
+      type: {class: CombatAnimationClipWindow, ns: ProjectEVE.Combat.Timeline, asm: ProjectEVE.Runtime}
+      data:
+        Name: M_Raven_SwordAuraCombo
+        CapabilityId: 0
+        StartTime: 0
+        EndTime: 4.5
+        PreviewAnimationClip: {fileID: -8442765399268028661, guid: a6e77802814f59d4897528c2a8789530, type: 3}
+        AnimatorStateName: M_Raven_SwordAuraCombo
+        ClipStartOffset: 0
+        ClipEndOffset: 11.25
+        ClipSpeed: 2.5
+        LoopPreview: 0
+    - rid: 117198542615609432
+      type: {class: BossReactionGateWindowClip, ns: ProjectEVE.Combat.Timeline, asm: ProjectEVE.Runtime}
+      data:
+        Name: Allow Skill
+        CapabilityId: 0
+        StartTime: 0
+        EndTime: 3.51
+        AttackTypes: 04000000
+        Policy: 0
+        BlockedOutcome: 0
+    - rid: 117198542615609433
+      type: {class: BossReactionGateWindowClip, ns: ProjectEVE.Combat.Timeline, asm: ProjectEVE.Runtime}
+      data:
+        Name: Interrupt_PostHit
+        CapabilityId: 0
+        StartTime: 3.51
+        EndTime: 4.5
+        AttackTypes: 000000000100000004000000
+        Policy: 0
+        BlockedOutcome: 0
+    - rid: 117198542615609553
+      type: {class: CombatMotionReferenceClip, ns: ProjectEVE.Combat.Timeline, asm: ProjectEVE.Runtime}
+      data:
+        Name: AimShot1
+        CapabilityId: 0
+        StartTime: 0.21666667
+        EndTime: 0.6
+        MotionKind: 8
+        PlayerMotionId: 0
+        BossAttackId: Raven_SwordAuraCombo
+        ProfileWindowName: 
+    - rid: 117198542615609554
+      type: {class: CombatMotionReferenceClip, ns: ProjectEVE.Combat.Timeline, asm: ProjectEVE.Runtime}
+      data:
+        Name: AimShot2
+        CapabilityId: 0
+        StartTime: 0.6666667
+        EndTime: 0.85
+        MotionKind: 8
+        PlayerMotionId: 0
+        BossAttackId: Raven_SwordAuraCombo
+        ProfileWindowName: 
+    - rid: 117198542615609555
+      type: {class: CombatMotionReferenceClip, ns: ProjectEVE.Combat.Timeline, asm: ProjectEVE.Runtime}
+      data:
+        Name: AimShot3
+        CapabilityId: 0
+        StartTime: 1.4666667
+        EndTime: 2.0833333
+        MotionKind: 8
+        PlayerMotionId: 0
+        BossAttackId: Raven_SwordAuraCombo
+        ProfileWindowName: 

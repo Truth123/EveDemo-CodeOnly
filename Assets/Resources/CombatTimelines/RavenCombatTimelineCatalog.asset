@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d6f6b7d368760cf48828f448094c658c, type: 3}
+  m_Name: RavenCombatTimelineCatalog
+  m_EditorClassIdentifier: ProjectEVE.Runtime::ProjectEVE.Combat.Timeline.CombatTimelineCatalog
+  catalogId: RavenCombatTimelineCatalog
+  owner: 1
+  timelines:
+  - {fileID: 11400000, guid: a3633057e1f89484394dc515f8a28308, type: 2}
+  - {fileID: 11400000, guid: 30826ad0a9ec1824aba211aeb5eaa390, type: 2}
+  - {fileID: 11400000, guid: 2f01cb82aeeb7094e8dba40705e9a611, type: 2}
+  - {fileID: 11400000, guid: e5984bbeaa2dbe844a03f50a4e5db0d5, type: 2}
+  - {fileID: 11400000, guid: 531e82715882bb549bb4eee27c689639, type: 2}
+  - {fileID: 11400000, guid: c254d8937fe83ce41bc4b52a548fda39, type: 2}
+  - {fileID: 11400000, guid: a91f3e4a2f6d4b44a9e9a03d4eb7c611, type: 2}
+  - {fileID: 11400000, guid: b2868c7f38ea4ca0ad47f33dc3137a91, type: 2}
+  - {fileID: 11400000, guid: fdfb6028f0b5a4d469b6bb50f792efdd, type: 2}
+  - {fileID: 11400000, guid: 135fcfa87bc4fc04c87a169c3dc88b4b, type: 2}
+  - {fileID: 11400000, guid: bd66898f1bccb164791aca4d1e47345b, type: 2}
+  - {fileID: 11400000, guid: b5613d2f97211fd47b045058088f732d, type: 2}
+  - {fileID: 11400000, guid: 9a817bba23c28984796f29d59ecbe512, type: 2}
+  - {fileID: 11400000, guid: 612c30d38cfc157458c016ebce09cb97, type: 2}
+  - {fileID: 11400000, guid: aee3ec23f832cb54ead40cc07d01b967, type: 2}
+  - {fileID: 11400000, guid: 5309dfb5f2f492e489492b37711aeebd, type: 2}

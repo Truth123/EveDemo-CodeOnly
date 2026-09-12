@@ -1,0 +1,331 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 87ed626447c4b0443a3db65cbe19370e, type: 3}
+  m_Name: Raven_MoveChainCombo
+  m_EditorClassIdentifier: ProjectEVE.Runtime::ProjectEVE.Combat.Timeline.BossAttackTimelineAsset
+  owner: 1
+  actionKind: 4
+  actionId: Raven_MoveChainCombo
+  displayName: MoveChainCombo
+  animationStateName: M_Raven_MoveChainCombo
+  totalFrames: 462
+  totalDuration: 7.7
+  frameRate: 60
+  tracks:
+  - Name: HitNode
+    TrackKind: 1
+    Locked: 0
+    Muted: 0
+    Clips:
+    - rid: 117198213917442257
+    - rid: 117198213917442258
+    - rid: 117198213917442259
+    - rid: 117198213917442260
+    - rid: 117198213917442310
+    - rid: 117198213917442311
+  - Name: Interrupt
+    TrackKind: 13
+    Locked: 0
+    Muted: 0
+    Clips:
+    - rid: 117198213917442261
+    - rid: 117198213917442262
+  - Name: Motion Profile
+    TrackKind: 7
+    Locked: 0
+    Muted: 0
+    Clips:
+    - rid: 117198213917442263
+    - rid: 117198213917442264
+    - rid: 117198213917442266
+    - rid: 117198213917442267
+    - rid: 117198213917442268
+    - rid: 117198213917442269
+    - rid: 117198213917442312
+    - rid: 117198542615609661
+    - rid: 117198542615609662
+  - Name: Animation Preview
+    TrackKind: 12
+    Locked: 0
+    Muted: 0
+    Clips:
+    - rid: 117198213917442270
+  angleLimit: 180
+  cooldown: 4
+  naturalRecoveryDuration: 1
+  defenseRewardRules:
+  - Name: FinalPGPE
+    RewardDuration: 1.3
+    Conditions:
+    - HitNodeId: MoveChainSlash_6
+      AllowedOutcomes: 3
+  references:
+    version: 2
+    RefIds:
+    - rid: 117198213917442257
+      type: {class: CombatHitNodeClip, ns: ProjectEVE.Combat.Timeline, asm: ProjectEVE.Runtime}
+      data:
+        Name: MoveChainSlash_1
+        CapabilityId: 2
+        StartTime: 1.1833333
+        EndTime: 1.2833333
+        AttackType: 0
+        ReactionIntent: 1
+        Damage: 18
+        PoiseDamage: 14
+        GuardDamage: 16
+        CanBeGuarded: 1
+        CanBePerfectGuarded: 1
+        CanBePerfectEvaded: 1
+        MaxHitsPerTarget: 1
+        EffectiveRange: 2.25
+        EffectiveAngle: 135
+        TriggersPerfectGuardBossStagger: 0
+        HitIndex: 0
+        SourcePart: 5
+    - rid: 117198213917442258
+      type: {class: CombatHitNodeClip, ns: ProjectEVE.Combat.Timeline, asm: ProjectEVE.Runtime}
+      data:
+        Name: MoveChainSlash_2
+        CapabilityId: 2
+        StartTime: 1.7166667
+        EndTime: 1.8166667
+        AttackType: 0
+        ReactionIntent: 1
+        Damage: 18
+        PoiseDamage: 14
+        GuardDamage: 16
+        CanBeGuarded: 1
+        CanBePerfectGuarded: 1
+        CanBePerfectEvaded: 1
+        MaxHitsPerTarget: 1
+        EffectiveRange: 2.25
+        EffectiveAngle: 135
+        TriggersPerfectGuardBossStagger: 0
+        HitIndex: 0
+        SourcePart: 1
+    - rid: 117198213917442259
+      type: {class: CombatHitNodeClip, ns: ProjectEVE.Combat.Timeline, asm: ProjectEVE.Runtime}
+      data:
+        Name: MoveChainSlash_3
+        CapabilityId: 2
+        StartTime: 3.85
+        EndTime: 4.016667
+        AttackType: 0
+        ReactionIntent: 1
+        Damage: 20
+        PoiseDamage: 16
+        GuardDamage: 18
+        CanBeGuarded: 1
+        CanBePerfectGuarded: 1
+        CanBePerfectEvaded: 1
+        MaxHitsPerTarget: 1
+        EffectiveRange: 2.25
+        EffectiveAngle: 135
+        TriggersPerfectGuardBossStagger: 0
+        HitIndex: 2
+        SourcePart: 1
+    - rid: 117198213917442260
+      type: {class: CombatHitNodeClip, ns: ProjectEVE.Combat.Timeline, asm: ProjectEVE.Runtime}
+      data:
+        Name: MoveChainSlash_4
+        CapabilityId: 2
+        StartTime: 4.5833335
+        EndTime: 4.6666665
+        AttackType: 0
+        ReactionIntent: 1
+        Damage: 28
+        PoiseDamage: 22
+        GuardDamage: 26
+        CanBeGuarded: 1
+        CanBePerfectGuarded: 1
+        CanBePerfectEvaded: 1
+        MaxHitsPerTarget: 1
+        EffectiveRange: 2.4
+        EffectiveAngle: 140
+        TriggersPerfectGuardBossStagger: 0
+        HitIndex: 3
+        SourcePart: 1
+    - rid: 117198213917442261
+      type: {class: BossReactionGateWindowClip, ns: ProjectEVE.Combat.Timeline, asm: ProjectEVE.Runtime}
+      data:
+        Name: Allow Skill
+        CapabilityId: 0
+        StartTime: 0
+        EndTime: 6.9
+        AttackTypes: 04000000
+        Policy: 0
+        BlockedOutcome: 0
+    - rid: 117198213917442262
+      type: {class: BossReactionGateWindowClip, ns: ProjectEVE.Combat.Timeline, asm: ProjectEVE.Runtime}
+      data:
+        Name: Interrupt_PostHit
+        CapabilityId: 0
+        StartTime: 6.9
+        EndTime: 7.7
+        AttackTypes: 000000000100000004000000
+        Policy: 0
+        BlockedOutcome: 0
+    - rid: 117198213917442263
+      type: {class: CombatMotionReferenceClip, ns: ProjectEVE.Combat.Timeline, asm: ProjectEVE.Runtime}
+      data:
+        Name: MoveChain_Orbit_1
+        CapabilityId: 0
+        StartTime: 0.2
+        EndTime: 0.4
+        MotionKind: 8
+        PlayerMotionId: 0
+        BossAttackId: Raven_MoveChainCombo
+        ProfileWindowName: MoveChain_Orbit_1
+    - rid: 117198213917442264
+      type: {class: CombatMotionReferenceClip, ns: ProjectEVE.Combat.Timeline, asm: ProjectEVE.Runtime}
+      data:
+        Name: MoveChainSlash_1_Adjust
+        CapabilityId: 0
+        StartTime: 0.68333334
+        EndTime: 1.1833333
+        MotionKind: 8
+        PlayerMotionId: 0
+        BossAttackId: Raven_MoveChainCombo
+        ProfileWindowName: MoveChainSlash_1_Adjust
+    - rid: 117198213917442266
+      type: {class: CombatMotionReferenceClip, ns: ProjectEVE.Combat.Timeline, asm: ProjectEVE.Runtime}
+      data:
+        Name: MoveChainSlash_2_Back
+        CapabilityId: 0
+        StartTime: 2.1166666
+        EndTime: 2.9
+        MotionKind: 8
+        PlayerMotionId: 0
+        BossAttackId: Raven_MoveChainCombo
+        ProfileWindowName: MoveChainSlash_2_Back
+    - rid: 117198213917442267
+      type: {class: CombatMotionReferenceClip, ns: ProjectEVE.Combat.Timeline, asm: ProjectEVE.Runtime}
+      data:
+        Name: MoveChain_Forward2
+        CapabilityId: 0
+        StartTime: 3.3666666
+        EndTime: 3.6666667
+        MotionKind: 8
+        PlayerMotionId: 0
+        BossAttackId: Raven_MoveChainCombo
+        ProfileWindowName: MoveChain_Forward2
+    - rid: 117198213917442268
+      type: {class: CombatMotionReferenceClip, ns: ProjectEVE.Combat.Timeline, asm: ProjectEVE.Runtime}
+      data:
+        Name: MoveChainSlash_3_Adjust
+        CapabilityId: 0
+        StartTime: 3.6666667
+        EndTime: 3.85
+        MotionKind: 8
+        PlayerMotionId: 0
+        BossAttackId: Raven_MoveChainCombo
+        ProfileWindowName: MoveChainSlash_3_Adjust
+    - rid: 117198213917442269
+      type: {class: CombatMotionReferenceClip, ns: ProjectEVE.Combat.Timeline, asm: ProjectEVE.Runtime}
+      data:
+        Name: MoveChain_Orbit_3
+        CapabilityId: 0
+        StartTime: 5.2
+        EndTime: 5.4
+        MotionKind: 8
+        PlayerMotionId: 0
+        BossAttackId: Raven_MoveChainCombo
+        ProfileWindowName: MoveChain_Orbit_3
+    - rid: 117198213917442270
+      type: {class: CombatAnimationClipWindow, ns: ProjectEVE.Combat.Timeline, asm: ProjectEVE.Runtime}
+      data:
+        Name: Animation Preview
+        CapabilityId: 0
+        StartTime: -0
+        EndTime: 8
+        PreviewAnimationClip: {fileID: 7862543960787182008, guid: a6e77802814f59d4897528c2a8789530, type: 3}
+        AnimatorStateName: M_Raven_MoveChainCombo
+        ClipStartOffset: 0
+        ClipEndOffset: 20
+        ClipSpeed: 2.5
+        LoopPreview: 0
+    - rid: 117198213917442310
+      type: {class: CombatHitNodeClip, ns: ProjectEVE.Combat.Timeline, asm: ProjectEVE.Runtime}
+      data:
+        Name: MoveChainSlash_5
+        CapabilityId: 2
+        StartTime: 6.116667
+        EndTime: 6.266667
+        AttackType: 0
+        ReactionIntent: 1
+        Damage: 20
+        PoiseDamage: 16
+        GuardDamage: 18
+        CanBeGuarded: 1
+        CanBePerfectGuarded: 1
+        CanBePerfectEvaded: 1
+        MaxHitsPerTarget: 1
+        EffectiveRange: 2.4
+        EffectiveAngle: 120
+        TriggersPerfectGuardBossStagger: 0
+        HitIndex: 4
+        SourcePart: 1
+    - rid: 117198213917442311
+      type: {class: CombatHitNodeClip, ns: ProjectEVE.Combat.Timeline, asm: ProjectEVE.Runtime}
+      data:
+        Name: MoveChainSlash_6
+        CapabilityId: 2
+        StartTime: 6.516667
+        EndTime: 6.616667
+        AttackType: 0
+        ReactionIntent: 1
+        Damage: 28
+        PoiseDamage: 20
+        GuardDamage: 20
+        CanBeGuarded: 1
+        CanBePerfectGuarded: 1
+        CanBePerfectEvaded: 1
+        MaxHitsPerTarget: 1
+        EffectiveRange: 2.4
+        EffectiveAngle: 120
+        TriggersPerfectGuardBossStagger: 1
+        HitIndex: 5
+        SourcePart: 1
+    - rid: 117198213917442312
+      type: {class: CombatMotionReferenceClip, ns: ProjectEVE.Combat.Timeline, asm: ProjectEVE.Runtime}
+      data:
+        Name: MoveChainSlash_3_Adjust
+        CapabilityId: 0
+        StartTime: 5.75
+        EndTime: 6.116667
+        MotionKind: 8
+        PlayerMotionId: 0
+        BossAttackId: Raven_MoveChainCombo
+        ProfileWindowName: MoveChainSlash_3_Adjust
+    - rid: 117198542615609661
+      type: {class: CombatMotionReferenceClip, ns: ProjectEVE.Combat.Timeline, asm: ProjectEVE.Runtime}
+      data:
+        Name: MoveChainSlash_1_Adjust2
+        CapabilityId: 0
+        StartTime: 1.4166666
+        EndTime: 1.7333333
+        MotionKind: 8
+        PlayerMotionId: 0
+        BossAttackId: Raven_MoveChainCombo
+        ProfileWindowName: 
+    - rid: 117198542615609662
+      type: {class: CombatMotionReferenceClip, ns: ProjectEVE.Combat.Timeline, asm: ProjectEVE.Runtime}
+      data:
+        Name: MoveChainSlash_2_Adjust2
+        CapabilityId: 0
+        StartTime: 4.15
+        EndTime: 4.6
+        MotionKind: 8
+        PlayerMotionId: 0
+        BossAttackId: Raven_MoveChainCombo
+        ProfileWindowName: 

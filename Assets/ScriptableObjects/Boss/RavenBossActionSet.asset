@@ -1,0 +1,304 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a2e63cb262e7ef468826cfb21a08882, type: 3}
+  m_Name: RavenBossActionSet
+  m_EditorClassIdentifier: ProjectEVE.Runtime::ProjectEVE.Boss.AI.BossActionSet
+  actions:
+  - actionId: Raven_Slash
+    kind: 0
+    enabled: 1
+    tags: []
+    allowedPhases: 7
+    phaseWeights:
+      Phase1: 30
+      Phase2: 18
+      Phase3: 18
+    pool: 2
+    pressureCost: 7
+    strength: 1
+    followUpPolicy: 0
+    pressurePreference: 0
+    preferenceFlags: 0
+    recentUseLimit: 1
+  - actionId: Raven_SlashChain
+    kind: 0
+    enabled: 1
+    tags: []
+    allowedPhases: 7
+    phaseWeights:
+      Phase1: 30
+      Phase2: 18
+      Phase3: 18
+    pool: 2
+    pressureCost: 11
+    strength: 1
+    followUpPolicy: 0
+    pressurePreference: 0
+    preferenceFlags: 1
+    recentUseLimit: 1
+  - actionId: Raven_MoveCombo
+    kind: 0
+    enabled: 1
+    tags: []
+    allowedPhases: 7
+    phaseWeights:
+      Phase1: 28
+      Phase2: 28
+      Phase3: 30
+    pool: 2
+    pressureCost: 15
+    strength: 2
+    followUpPolicy: 0
+    pressurePreference: 0
+    preferenceFlags: 0
+    recentUseLimit: 1
+  - actionId: Raven_MoveChainCombo
+    kind: 0
+    enabled: 1
+    tags: []
+    allowedPhases: 7
+    phaseWeights:
+      Phase1: 28
+      Phase2: 28
+      Phase3: 31
+    pool: 2
+    pressureCost: 24
+    strength: 3
+    followUpPolicy: 0
+    pressurePreference: 2
+    preferenceFlags: 0
+    recentUseLimit: 1
+  - actionId: Raven_EvadeBackRush
+    kind: 0
+    enabled: 1
+    tags: []
+    allowedPhases: 7
+    phaseWeights:
+      Phase1: 20
+      Phase2: 20
+      Phase3: 22
+    pool: 1
+    pressureCost: 14
+    strength: 2
+    followUpPolicy: 0
+    pressurePreference: 2
+    preferenceFlags: 0
+    recentUseLimit: 1
+  - actionId: Raven_RapidMoveBack
+    kind: 5
+    enabled: 1
+    tags: []
+    allowedPhases: 7
+    phaseWeights:
+      Phase1: 15
+      Phase2: 15
+      Phase3: 15
+    pool: 1
+    pressureCost: 0
+    strength: 0
+    followUpPolicy: 2
+    pressurePreference: 4
+    preferenceFlags: 0
+    recentUseLimit: 1
+  - actionId: Raven_ChaseGrab
+    kind: 0
+    enabled: 1
+    tags: []
+    allowedPhases: -1
+    phaseWeights:
+      Phase1: 15
+      Phase2: 20
+      Phase3: 23
+    pool: 3
+    pressureCost: 17
+    strength: 2
+    followUpPolicy: 0
+    pressurePreference: 0
+    preferenceFlags: 0
+    recentUseLimit: 1
+  - actionId: Raven_ChaseCombo
+    kind: 0
+    enabled: 1
+    tags: []
+    allowedPhases: -1
+    phaseWeights:
+      Phase1: 15
+      Phase2: 20
+      Phase3: 24
+    pool: 3
+    pressureCost: 25
+    strength: 3
+    followUpPolicy: 0
+    pressurePreference: 0
+    preferenceFlags: 0
+    recentUseLimit: 1
+  - actionId: Raven_SlashCombo
+    kind: 0
+    enabled: 1
+    tags:
+    - MultiHitPressure
+    allowedPhases: -1
+    phaseWeights:
+      Phase1: 10
+      Phase2: 15
+      Phase3: 18
+    pool: 4
+    pressureCost: 30
+    strength: 4
+    followUpPolicy: 1
+    pressurePreference: 2
+    preferenceFlags: 0
+    recentUseLimit: 1
+  - actionId: Raven_BetaChargeCombo
+    kind: 0
+    enabled: 1
+    tags: []
+    allowedPhases: 6
+    phaseWeights:
+      Phase1: 0
+      Phase2: 14
+      Phase3: 18
+    pool: 4
+    pressureCost: 24
+    strength: 4
+    followUpPolicy: 1
+    pressurePreference: 2
+    preferenceFlags: 14
+    recentUseLimit: 1
+  - actionId: Raven_BurstAreaSlash
+    kind: 0
+    enabled: 1
+    tags: []
+    allowedPhases: 6
+    phaseWeights:
+      Phase1: 0
+      Phase2: 8
+      Phase3: 12
+    pool: 4
+    pressureCost: 30
+    strength: 4
+    followUpPolicy: 1
+    pressurePreference: 1
+    preferenceFlags: 0
+    recentUseLimit: 1
+  - actionId: Raven_SwordAuraCombo
+    kind: 0
+    enabled: 1
+    tags: []
+    allowedPhases: 6
+    phaseWeights:
+      Phase1: 0
+      Phase2: 12
+      Phase3: 15
+    pool: 5
+    pressureCost: 24
+    strength: 3
+    followUpPolicy: 0
+    pressurePreference: 3
+    preferenceFlags: 0
+    recentUseLimit: 1
+  - actionId: Raven_EvadeBackSwordAura
+    kind: 0
+    enabled: 1
+    tags: []
+    allowedPhases: 6
+    phaseWeights:
+      Phase1: 0
+      Phase2: 16
+      Phase3: 18
+    pool: 1
+    pressureCost: 17
+    strength: 2
+    followUpPolicy: 0
+    pressurePreference: 2
+    preferenceFlags: 0
+    recentUseLimit: 1
+  phasePressureProfiles:
+  - Phase: 0
+    TargetMin: 18
+    TargetMax: 50
+    SoftLimit: 60
+    HardLimit: 70
+    EnterDecayPressure: 60
+    ExitDecayPressure: 42
+    MaxConsecutiveAttacks: 2
+  - Phase: 1
+    TargetMin: 38
+    TargetMax: 60
+    SoftLimit: 70
+    HardLimit: 82
+    EnterDecayPressure: 70
+    ExitDecayPressure: 52
+    MaxConsecutiveAttacks: 3
+  - Phase: 2
+    TargetMin: 46
+    TargetMax: 66
+    SoftLimit: 76
+    HardLimit: 86
+    EnterDecayPressure: 76
+    ExitDecayPressure: 58
+    MaxConsecutiveAttacks: 4
+  poolPolicies:
+  - Pool: 1
+    MinDistance: 0
+    MaxDistance: 3.5
+    RequireHitStaggerContext: 1
+    DisallowHitStaggerContext: 0
+    DisallowDuringPressureDecay: 0
+    RecentThreeLimit: 2
+  - Pool: 2
+    MinDistance: 0
+    MaxDistance: 3.5
+    RequireHitStaggerContext: 0
+    DisallowHitStaggerContext: 0
+    DisallowDuringPressureDecay: 0
+    RecentThreeLimit: 0
+  - Pool: 3
+    MinDistance: 3.5
+    MaxDistance: 9
+    RequireHitStaggerContext: 0
+    DisallowHitStaggerContext: 1
+    DisallowDuringPressureDecay: 0
+    RecentThreeLimit: 2
+  - Pool: 4
+    MinDistance: 0
+    MaxDistance: 3.5
+    RequireHitStaggerContext: 0
+    DisallowHitStaggerContext: 0
+    DisallowDuringPressureDecay: 1
+    RecentThreeLimit: 2
+  - Pool: 5
+    MinDistance: 6
+    MaxDistance: 11
+    RequireHitStaggerContext: 0
+    DisallowHitStaggerContext: 1
+    DisallowDuringPressureDecay: 1
+    RecentThreeLimit: 1
+  tuning:
+    DecisionIntervalMin: 0.15
+    DecisionIntervalMax: 0.25
+    NeutralMinDuration: 0.3
+    PlayerBehaviorWindow: 8
+    FrequentGuardDuration: 2
+    RetreatSustainDuration: 0.6
+    CooldownSoonThreshold: 0.75
+    PreferenceMultiplier: 1.5
+    PressureMatchMultiplier: 1.4
+    PressureMismatchMultiplier: 0.65
+    PreferenceMultiplierCap: 2.5
+    LowHealthRatio: 0.35
+    LowPoiseRatio: 0.3
+    NearPhaseTransitionRatio: 0.05
+    ReactionSequenceResetDelay: 1.25
+    FirstHitCounterChance: 0.25
+    SecondHitCounterChance: 0.6
+    ThirdHitCounterChance: 1

@@ -1,0 +1,224 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d349baebc5fc1a4d821a3169a3715f5, type: 3}
+  m_Name: Reaction_Player_Knockdown
+  m_EditorClassIdentifier: ProjectEVE.Runtime::ProjectEVE.Combat.Timeline.PlayerReactionTimelineAsset
+  owner: 0
+  actionKind: 5
+  actionId: Player_Knockdown
+  displayName: Player Knockdown
+  animationStateName: SM_Reaction/Anim_Knockdown_Start_B
+  totalFrames: 300
+  totalDuration: 5
+  frameRate: 60
+  tracks:
+  - Name: Phase
+    TrackKind: 0
+    Locked: 0
+    Muted: 0
+    Clips:
+    - rid: 3564762341354242372
+    - rid: 3564762341354242373
+    - rid: 3564762341354242374
+    - rid: 3564762341354242375
+  - Name: Reaction
+    TrackKind: 11
+    Locked: 0
+    Muted: 0
+    Clips:
+    - rid: 3564762341354242367
+    - rid: 3564762341354242368
+    - rid: 3564762341354242369
+  - Name: Cancel
+    TrackKind: 3
+    Locked: 0
+    Muted: 0
+    Clips:
+    - rid: 3564762341354242376
+    - rid: 3564762341354242377
+    - rid: 3564762341354242378
+    - rid: 3564762341354242379
+    - rid: 117198542615609557
+  - Name: Motion
+    TrackKind: 6
+    Locked: 0
+    Muted: 0
+    Clips:
+    - rid: 3564762473123283305
+  - Name: Animation Preview
+    TrackKind: 12
+    Locked: 0
+    Muted: 0
+    Clips:
+    - rid: 3564762341354242371
+    - rid: 3564762473123283303
+    - rid: 3564762473123283304
+  reactionType: 3
+  references:
+    version: 2
+    RefIds:
+    - rid: 117198542615609557
+      type: {class: CombatCancelWindowClip, ns: ProjectEVE.Combat.Timeline, asm: ProjectEVE.Runtime}
+      data:
+        Name: Cancel / Move
+        CapabilityId: 11
+        StartTime: 4
+        EndTime: 5
+    - rid: 3564762341354242367
+      type: {class: CombatReactionWindowClip, ns: ProjectEVE.Combat.Timeline, asm: ProjectEVE.Runtime}
+      data:
+        Name: Stun
+        CapabilityId: 21
+        StartTime: 0
+        EndTime: 2.25
+        ReactionType: 3
+        Direction: 0
+        StunDuration: 0
+        RecoveryStartTime: 0
+        CanReturnTime: 0
+        ReactionMotionId: 40
+    - rid: 3564762341354242368
+      type: {class: CombatReactionWindowClip, ns: ProjectEVE.Combat.Timeline, asm: ProjectEVE.Runtime}
+      data:
+        Name: Recovery
+        CapabilityId: 22
+        StartTime: 2.25
+        EndTime: 3.6833334
+        ReactionType: 3
+        Direction: 0
+        StunDuration: 0
+        RecoveryStartTime: 0
+        CanReturnTime: 0
+        ReactionMotionId: 40
+    - rid: 3564762341354242369
+      type: {class: CombatReactionWindowClip, ns: ProjectEVE.Combat.Timeline, asm: ProjectEVE.Runtime}
+      data:
+        Name: CanReturn
+        CapabilityId: 23
+        StartTime: 3.6833334
+        EndTime: 5
+        ReactionType: 3
+        Direction: 0
+        StunDuration: 0
+        RecoveryStartTime: 0
+        CanReturnTime: 0
+        ReactionMotionId: 40
+    - rid: 3564762341354242371
+      type: {class: CombatAnimationClipWindow, ns: ProjectEVE.Combat.Timeline, asm: ProjectEVE.Runtime}
+      data:
+        Name: start
+        CapabilityId: 0
+        StartTime: 0
+        EndTime: 2.0166667
+        PreviewAnimationClip: {fileID: -4099382565062866150, guid: 3cdf2c62b999db34dae7ecc58d990f77, type: 3}
+        AnimatorStateName: SM_Reaction/Anim_Knockdown_Start_B
+        ClipStartOffset: 0
+        ClipEndOffset: 2.0166667
+        ClipSpeed: 1
+        LoopPreview: 0
+    - rid: 3564762341354242372
+      type: {class: CombatPhaseClip, ns: ProjectEVE.Combat.Timeline, asm: ProjectEVE.Runtime}
+      data:
+        Name: Start
+        CapabilityId: 0
+        StartTime: 0
+        EndTime: 2.0166667
+        Phase: 10
+    - rid: 3564762341354242373
+      type: {class: CombatPhaseClip, ns: ProjectEVE.Combat.Timeline, asm: ProjectEVE.Runtime}
+      data:
+        Name: Loop
+        CapabilityId: 0
+        StartTime: 2.0166667
+        EndTime: 2.25
+        Phase: 50
+    - rid: 3564762341354242374
+      type: {class: CombatPhaseClip, ns: ProjectEVE.Combat.Timeline, asm: ProjectEVE.Runtime}
+      data:
+        Name: Recovery
+        CapabilityId: 0
+        StartTime: 2.25
+        EndTime: 3.6833334
+        Phase: 30
+    - rid: 3564762341354242375
+      type: {class: CombatPhaseClip, ns: ProjectEVE.Combat.Timeline, asm: ProjectEVE.Runtime}
+      data:
+        Name: Reset
+        CapabilityId: 0
+        StartTime: 3.6833334
+        EndTime: 5
+        Phase: 40
+    - rid: 3564762341354242376
+      type: {class: CombatCancelWindowClip, ns: ProjectEVE.Combat.Timeline, asm: ProjectEVE.Runtime}
+      data:
+        Name: WakeEvade
+        CapabilityId: 6
+        StartTime: 3.6833334
+        EndTime: 5
+    - rid: 3564762341354242377
+      type: {class: CombatCancelWindowClip, ns: ProjectEVE.Combat.Timeline, asm: ProjectEVE.Runtime}
+      data:
+        Name: WakeSkill
+        CapabilityId: 8
+        StartTime: 3.6833334
+        EndTime: 5
+    - rid: 3564762341354242378
+      type: {class: CombatCancelWindowClip, ns: ProjectEVE.Combat.Timeline, asm: ProjectEVE.Runtime}
+      data:
+        Name: WakeGuard
+        CapabilityId: 9
+        StartTime: 3.6833334
+        EndTime: 5
+    - rid: 3564762341354242379
+      type: {class: CombatCancelWindowClip, ns: ProjectEVE.Combat.Timeline, asm: ProjectEVE.Runtime}
+      data:
+        Name: WakeAttack
+        CapabilityId: 10
+        StartTime: 3.6833334
+        EndTime: 5
+    - rid: 3564762473123283303
+      type: {class: CombatAnimationClipWindow, ns: ProjectEVE.Combat.Timeline, asm: ProjectEVE.Runtime}
+      data:
+        Name: loop
+        CapabilityId: 0
+        StartTime: 2.0166667
+        EndTime: 2.25
+        PreviewAnimationClip: {fileID: 7448869390265170926, guid: 3cdf2c62b999db34dae7ecc58d990f77, type: 3}
+        AnimatorStateName: SM_Reaction/Anim_Knockdown_Start_B
+        ClipStartOffset: 0
+        ClipEndOffset: 0.23333333
+        ClipSpeed: 1
+        LoopPreview: 0
+    - rid: 3564762473123283304
+      type: {class: CombatAnimationClipWindow, ns: ProjectEVE.Combat.Timeline, asm: ProjectEVE.Runtime}
+      data:
+        Name: End
+        CapabilityId: 0
+        StartTime: 2.25
+        EndTime: 5.4583335
+        PreviewAnimationClip: {fileID: 2179168730366622535, guid: 3cdf2c62b999db34dae7ecc58d990f77, type: 3}
+        AnimatorStateName: SM_Reaction/Anim_Knockdown_Start_B
+        ClipStartOffset: 0
+        ClipEndOffset: 3.2083335
+        ClipSpeed: 1
+        LoopPreview: 0
+    - rid: 3564762473123283305
+      type: {class: CombatMotionReferenceClip, ns: ProjectEVE.Combat.Timeline, asm: ProjectEVE.Runtime}
+      data:
+        Name: KnockdownWrap
+        CapabilityId: 0
+        StartTime: 0
+        EndTime: 1.5833334
+        MotionKind: 6
+        PlayerMotionId: 40
+        BossAttackId: 
+        ProfileWindowName: 

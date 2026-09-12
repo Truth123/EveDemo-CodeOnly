@@ -1,0 +1,196 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e204f9080fb26e94ba2aa4e61b059990, type: 3}
+  m_Name: Attack_H2
+  m_EditorClassIdentifier: ProjectEVE.Runtime::ProjectEVE.Combat.Timeline.PlayerAttackTimelineAsset
+  owner: 0
+  actionKind: 0
+  actionId: H2
+  displayName: H2
+  animationStateName: Anim_Attack_H2
+  totalFrames: 240
+  totalDuration: 4
+  frameRate: 60
+  tracks:
+  - Name: Phase
+    TrackKind: 0
+    Locked: 0
+    Muted: 0
+    Clips:
+    - rid: 3564762341354242392
+    - rid: 3564762341354242393
+    - rid: 3564762341354242394
+    - rid: 3564762341354242395
+  - Name: Hitbox
+    TrackKind: 1
+    Locked: 0
+    Muted: 0
+    Clips:
+    - rid: 3564762341354242396
+  - Name: Input Buffer
+    TrackKind: 2
+    Locked: 0
+    Muted: 0
+    Clips:
+    - rid: 3564762341354242397
+    - rid: 3564762341354242398
+    - rid: 3564762341354242399
+  - Name: Cancel
+    TrackKind: 3
+    Locked: 0
+    Muted: 0
+    Clips:
+    - rid: 3564762341354242400
+    - rid: 3564762341354242401
+    - rid: 3564762341354242402
+    - rid: 3564762341354242403
+    - rid: 3564762341354242404
+    - rid: 3564762341354242405
+    - rid: 3564762341354242406
+  - Name: Animation Preview
+    TrackKind: 12
+    Locked: 0
+    Muted: 0
+    Clips:
+    - rid: 3564762341354242407
+  attackInputType: 2
+  comboIndex: 2
+  nextLightNodeId: L3
+  nextHeavyNodeId: 
+  attackType: 1
+  damage: 28
+  poiseDamage: 24
+  references:
+    version: 2
+    RefIds:
+    - rid: 3564762341354242392
+      type: {class: CombatPhaseClip, ns: ProjectEVE.Combat.Timeline, asm: ProjectEVE.Runtime}
+      data:
+        Name: Startup
+        CapabilityId: 0
+        StartTime: 0
+        EndTime: 0.5833333
+        Phase: 10
+    - rid: 3564762341354242393
+      type: {class: CombatPhaseClip, ns: ProjectEVE.Combat.Timeline, asm: ProjectEVE.Runtime}
+      data:
+        Name: Active
+        CapabilityId: 0
+        StartTime: 0.5833333
+        EndTime: 1.0833334
+        Phase: 20
+    - rid: 3564762341354242394
+      type: {class: CombatPhaseClip, ns: ProjectEVE.Combat.Timeline, asm: ProjectEVE.Runtime}
+      data:
+        Name: Recovery
+        CapabilityId: 0
+        StartTime: 1.0833334
+        EndTime: 1.6333333
+        Phase: 30
+    - rid: 3564762341354242395
+      type: {class: CombatPhaseClip, ns: ProjectEVE.Combat.Timeline, asm: ProjectEVE.Runtime}
+      data:
+        Name: Reset
+        CapabilityId: 0
+        StartTime: 1.6333333
+        EndTime: 4
+        Phase: 40
+    - rid: 3564762341354242396
+      type: {class: CombatAttackWindowClip, ns: ProjectEVE.Combat.Timeline, asm: ProjectEVE.Runtime}
+      data:
+        Name: Active
+        CapabilityId: 2
+        StartTime: 0.71666664
+        EndTime: 0.93333334
+    - rid: 3564762341354242397
+      type: {class: CombatAttackWindowClip, ns: ProjectEVE.Combat.Timeline, asm: ProjectEVE.Runtime}
+      data:
+        Name: AttackBuffer
+        CapabilityId: 3
+        StartTime: 0.3
+        EndTime: 1.0833334
+    - rid: 3564762341354242398
+      type: {class: CombatAttackWindowClip, ns: ProjectEVE.Combat.Timeline, asm: ProjectEVE.Runtime}
+      data:
+        Name: EvadeBuffer
+        CapabilityId: 5
+        StartTime: 0.3
+        EndTime: 1.0833334
+    - rid: 3564762341354242399
+      type: {class: CombatAttackWindowClip, ns: ProjectEVE.Combat.Timeline, asm: ProjectEVE.Runtime}
+      data:
+        Name: SkillBuffer
+        CapabilityId: 7
+        StartTime: 0.3
+        EndTime: 1.0833334
+    - rid: 3564762341354242400
+      type: {class: CombatCancelWindowClip, ns: ProjectEVE.Combat.Timeline, asm: ProjectEVE.Runtime}
+      data:
+        Name: CommitCancel
+        CapabilityId: 1
+        StartTime: 0
+        EndTime: 0.3
+    - rid: 3564762341354242401
+      type: {class: CombatCancelWindowClip, ns: ProjectEVE.Combat.Timeline, asm: ProjectEVE.Runtime}
+      data:
+        Name: Combo
+        CapabilityId: 4
+        StartTime: 1.0833334
+        EndTime: 1.6333333
+    - rid: 3564762341354242402
+      type: {class: CombatCancelWindowClip, ns: ProjectEVE.Combat.Timeline, asm: ProjectEVE.Runtime}
+      data:
+        Name: EvadeCancel
+        CapabilityId: 6
+        StartTime: 1.0833334
+        EndTime: 4
+    - rid: 3564762341354242403
+      type: {class: CombatCancelWindowClip, ns: ProjectEVE.Combat.Timeline, asm: ProjectEVE.Runtime}
+      data:
+        Name: SkillCancel
+        CapabilityId: 8
+        StartTime: 1.0833334
+        EndTime: 4
+    - rid: 3564762341354242404
+      type: {class: CombatCancelWindowClip, ns: ProjectEVE.Combat.Timeline, asm: ProjectEVE.Runtime}
+      data:
+        Name: GuardCancel
+        CapabilityId: 9
+        StartTime: 1.0833334
+        EndTime: 4
+    - rid: 3564762341354242405
+      type: {class: CombatCancelWindowClip, ns: ProjectEVE.Combat.Timeline, asm: ProjectEVE.Runtime}
+      data:
+        Name: MoveCancel
+        CapabilityId: 11
+        StartTime: 2.5
+        EndTime: 4
+    - rid: 3564762341354242406
+      type: {class: CombatCancelWindowClip, ns: ProjectEVE.Combat.Timeline, asm: ProjectEVE.Runtime}
+      data:
+        Name: Reset
+        CapabilityId: 10
+        StartTime: 1.6333333
+        EndTime: 4
+    - rid: 3564762341354242407
+      type: {class: CombatAnimationClipWindow, ns: ProjectEVE.Combat.Timeline, asm: ProjectEVE.Runtime}
+      data:
+        Name: Anim_Attack_H2
+        CapabilityId: 0
+        StartTime: 0
+        EndTime: 4.7
+        PreviewAnimationClip: {fileID: -5219980666099840644, guid: faa4f229e001cfd46a034c2c939a7d78, type: 3}
+        AnimatorStateName: Anim_Attack_H2
+        ClipStartOffset: 0
+        ClipEndOffset: 4.7
+        ClipSpeed: 1
+        LoopPreview: 0

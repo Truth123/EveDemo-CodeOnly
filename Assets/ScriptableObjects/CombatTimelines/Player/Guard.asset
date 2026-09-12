@@ -1,0 +1,229 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d6f398a936a978142be843cf87ab6262, type: 3}
+  m_Name: Guard
+  m_EditorClassIdentifier: ProjectEVE.Runtime::ProjectEVE.Combat.Timeline.PlayerGuardTimelineAsset
+  owner: 0
+  actionKind: 3
+  actionId: Guard
+  displayName: Guard
+  animationStateName: SM_Guard
+  totalFrames: 60
+  totalDuration: 1
+  frameRate: 60
+  tracks:
+  - Name: Start
+    TrackKind: 4
+    Locked: 0
+    Muted: 0
+    Clips:
+    - rid: 3564762341354242330
+    - rid: 3564762341354242331
+    - rid: 3564762341354242332
+  - Name: Perfect Guard
+    TrackKind: 2
+    Locked: 0
+    Muted: 0
+    Clips:
+    - rid: 3564762341354242334
+    - rid: 3564762341354242335
+    - rid: 3564762358099214639
+  - Name: GuardHit
+    TrackKind: 10
+    Locked: 0
+    Muted: 0
+    Clips:
+    - rid: 3564762341354242333
+    - rid: 3564762358099214638
+  - Name: Release
+    TrackKind: 3
+    Locked: 0
+    Muted: 0
+    Clips:
+    - rid: 3564762341354242337
+    - rid: 3564762341354242338
+    - rid: 3564762341354242340
+    - rid: 3564762341354242341
+    - rid: 3564762341354242342
+  - Name: Animation Preview
+    TrackKind: 12
+    Locked: 0
+    Muted: 0
+    Clips:
+    - rid: 3564762341354242343
+    - rid: 3564762341354242344
+    - rid: 3564762341354242345
+    - rid: 3564762358099214631
+    - rid: 3564762358099214632
+  perfectGuardChainActiveFrames: 10
+  references:
+    version: 2
+    RefIds:
+    - rid: 3564762341354242330
+      type: {class: CombatMarkerClip, ns: ProjectEVE.Combat.Timeline, asm: ProjectEVE.Runtime}
+      data:
+        Name: MinimumGuardStart
+        CapabilityId: 0
+        StartTime: 0
+        EndTime: 0.15
+        MarkerId: 
+    - rid: 3564762341354242331
+      type: {class: CombatDefenseWindowClip, ns: ProjectEVE.Combat.Timeline, asm: ProjectEVE.Runtime}
+      data:
+        Name: PerfectGuard
+        CapabilityId: 14
+        StartTime: 0
+        EndTime: 0.13333334
+    - rid: 3564762341354242332
+      type: {class: CombatDefenseWindowClip, ns: ProjectEVE.Combat.Timeline, asm: ProjectEVE.Runtime}
+      data:
+        Name: BlockActive
+        CapabilityId: 15
+        StartTime: 0.13333334
+        EndTime: 0.16666667
+    - rid: 3564762341354242333
+      type: {class: CombatMarkerClip, ns: ProjectEVE.Combat.Timeline, asm: ProjectEVE.Runtime}
+      data:
+        Name: GuardHitReaction
+        CapabilityId: 0
+        StartTime: 0
+        EndTime: 0.83
+        MarkerId: GuardHitReaction
+    - rid: 3564762341354242334
+      type: {class: CombatMarkerClip, ns: ProjectEVE.Combat.Timeline, asm: ProjectEVE.Runtime}
+      data:
+        Name: PerfectGuardReaction
+        CapabilityId: 0
+        StartTime: 0
+        EndTime: 0.5
+        MarkerId: PerfectGuardReaction
+    - rid: 3564762341354242335
+      type: {class: CombatAttackWindowClip, ns: ProjectEVE.Combat.Timeline, asm: ProjectEVE.Runtime}
+      data:
+        Name: PerfectGuardChainInput
+        CapabilityId: 19
+        StartTime: 0.16666667
+        EndTime: 0.46666667
+    - rid: 3564762341354242337
+      type: {class: CombatAttackWindowClip, ns: ProjectEVE.Combat.Timeline, asm: ProjectEVE.Runtime}
+      data:
+        Name: EvadeBuffer
+        CapabilityId: 5
+        StartTime: 0
+        EndTime: 0.1
+    - rid: 3564762341354242338
+      type: {class: CombatAttackWindowClip, ns: ProjectEVE.Combat.Timeline, asm: ProjectEVE.Runtime}
+      data:
+        Name: SkillBuffer
+        CapabilityId: 7
+        StartTime: 0
+        EndTime: 0.1
+    - rid: 3564762341354242340
+      type: {class: CombatCancelWindowClip, ns: ProjectEVE.Combat.Timeline, asm: ProjectEVE.Runtime}
+      data:
+        Name: EvadeCancel
+        CapabilityId: 6
+        StartTime: 0.1
+        EndTime: 0.73333335
+    - rid: 3564762341354242341
+      type: {class: CombatCancelWindowClip, ns: ProjectEVE.Combat.Timeline, asm: ProjectEVE.Runtime}
+      data:
+        Name: SkillCancel
+        CapabilityId: 8
+        StartTime: 0.1
+        EndTime: 0.73333335
+    - rid: 3564762341354242342
+      type: {class: CombatCancelWindowClip, ns: ProjectEVE.Combat.Timeline, asm: ProjectEVE.Runtime}
+      data:
+        Name: AttackReset
+        CapabilityId: 10
+        StartTime: 0.1
+        EndTime: 0.73333335
+    - rid: 3564762341354242343
+      type: {class: CombatAnimationClipWindow, ns: ProjectEVE.Combat.Timeline, asm: ProjectEVE.Runtime}
+      data:
+        Name: Guard Start
+        CapabilityId: 0
+        StartTime: 0
+        EndTime: 0.625
+        PreviewAnimationClip: {fileID: -5844557974610493378, guid: 511d08a2cf68d574aa42d3925c6f6bff, type: 3}
+        AnimatorStateName: SM_Guard/Anim_Guard_Start
+        ClipStartOffset: 0
+        ClipEndOffset: 1.25
+        ClipSpeed: 2
+        LoopPreview: 0
+    - rid: 3564762341354242344
+      type: {class: CombatAnimationClipWindow, ns: ProjectEVE.Combat.Timeline, asm: ProjectEVE.Runtime}
+      data:
+        Name: Guard Loop
+        CapabilityId: 0
+        StartTime: 0
+        EndTime: 5.366667
+        PreviewAnimationClip: {fileID: 4019607141265986479, guid: 3ebb48c861da6324aaf750182b8f8000, type: 3}
+        AnimatorStateName: SM_Guard/Anim_Guard_Loop
+        ClipStartOffset: 0
+        ClipEndOffset: 5.366667
+        ClipSpeed: 1
+        LoopPreview: 1
+    - rid: 3564762341354242345
+      type: {class: CombatAnimationClipWindow, ns: ProjectEVE.Combat.Timeline, asm: ProjectEVE.Runtime}
+      data:
+        Name: Guard End
+        CapabilityId: 0
+        StartTime: -0
+        EndTime: 0.8333333
+        PreviewAnimationClip: {fileID: -1259633157413392881, guid: 511d08a2cf68d574aa42d3925c6f6bff, type: 3}
+        AnimatorStateName: SM_Guard/Anim_Guard_End
+        ClipStartOffset: 0
+        ClipEndOffset: 1.6666666
+        ClipSpeed: 2
+        LoopPreview: 0
+    - rid: 3564762358099214631
+      type: {class: CombatAnimationClipWindow, ns: ProjectEVE.Combat.Timeline, asm: ProjectEVE.Runtime}
+      data:
+        Name: PerfectGuard
+        CapabilityId: 0
+        StartTime: 0
+        EndTime: 1.4333333
+        PreviewAnimationClip: {fileID: 6724098558092002339, guid: dee23e38e87e0a844938da91c1500e04, type: 3}
+        AnimatorStateName: SM_Guard
+        ClipStartOffset: 0
+        ClipEndOffset: 2.8666666
+        ClipSpeed: 2
+        LoopPreview: 0
+    - rid: 3564762358099214632
+      type: {class: CombatAnimationClipWindow, ns: ProjectEVE.Combat.Timeline, asm: ProjectEVE.Runtime}
+      data:
+        Name: guardHitLeft
+        CapabilityId: 0
+        StartTime: -0
+        EndTime: 1.5
+        PreviewAnimationClip: {fileID: 2768462235285208103, guid: 511d08a2cf68d574aa42d3925c6f6bff, type: 3}
+        AnimatorStateName: SM_Guard
+        ClipStartOffset: 0
+        ClipEndOffset: 1.5
+        ClipSpeed: 1
+        LoopPreview: 0
+    - rid: 3564762358099214638
+      type: {class: CombatCancelWindowClip, ns: ProjectEVE.Combat.Timeline, asm: ProjectEVE.Runtime}
+      data:
+        Name: GuardHitGuardRelease
+        CapabilityId: 27
+        StartTime: 0.21666667
+        EndTime: 0.8333333
+    - rid: 3564762358099214639
+      type: {class: CombatCancelWindowClip, ns: ProjectEVE.Combat.Timeline, asm: ProjectEVE.Runtime}
+      data:
+        Name: PerfectGuardGuardRelease
+        CapabilityId: 27
+        StartTime: 0.16666667
+        EndTime: 0.5

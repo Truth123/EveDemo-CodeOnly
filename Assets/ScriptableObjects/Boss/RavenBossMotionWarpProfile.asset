@@ -1,0 +1,1038 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e6524d32a2d758b4d83abfd92a2a19ff, type: 3}
+  m_Name: RavenBossMotionWarpProfile
+  m_EditorClassIdentifier: ProjectEVE.Runtime::ProjectEVE.Boss.Movement.BossMotionWarpProfile
+  attacks:
+  - AttackId: Raven_Slash
+    MotionMode: 1
+    Selection:
+      MinStartDistance: 0
+      MaxStartDistance: 2.6
+      RequiredForwardClearance: 0.5
+      RequiredBackwardClearance: 0
+    WarpWindows:
+    - Name: Slash_Warp
+      StartTime: 0.167
+      EndTime: 0.7
+      WarpMode: 1
+      TargetingMode: 0
+      StopDistance: 1.15
+      DeadZone: 0.08
+      MaxMovePerFrame: 1
+      MaxYawSpeed: 540
+      FollowTarget: 1
+      WarpTranslation: 1
+      UseAuthoredTotalTranslation: 1
+      AuthoredTotalTranslation: {x: 0, y: 0, z: 1.4975}
+      AllowScaleUp: 1
+      AllowScaleDown: 1
+      MinScaleMultiplier: 0.01
+      MaxScaleMultiplier: 5
+    RootMotionSuppressWindows:
+    - Name: Slash_AfterWarp_Stop
+      StartTime: 0.7
+      EndTime: 2.8
+      TranslationScale: 0
+    CodeMoveWindows: []
+  - AttackId: Raven_SlashChain
+    MotionMode: 1
+    Selection:
+      MinStartDistance: 0
+      MaxStartDistance: 2.6
+      RequiredForwardClearance: 0.5
+      RequiredBackwardClearance: 0
+    WarpWindows:
+    - Name: SlashChain_1_Warp
+      StartTime: 0.333
+      EndTime: 1.033
+      WarpMode: 1
+      TargetingMode: 0
+      StopDistance: 1.15
+      DeadZone: 0.08
+      MaxMovePerFrame: 1
+      MaxYawSpeed: 540
+      FollowTarget: 1
+      WarpTranslation: 1
+      UseAuthoredTotalTranslation: 1
+      AuthoredTotalTranslation: {x: 0, y: 0, z: 2.8768048}
+      AllowScaleUp: 1
+      AllowScaleDown: 1
+      MinScaleMultiplier: 0.01
+      MaxScaleMultiplier: 5
+    - Name: SlashChain_2_Warp
+      StartTime: 1.567
+      EndTime: 1.7
+      WarpMode: 1
+      TargetingMode: 0
+      StopDistance: 1.15
+      DeadZone: 0.08
+      MaxMovePerFrame: 1
+      MaxYawSpeed: 420
+      FollowTarget: 1
+      WarpTranslation: 1
+      UseAuthoredTotalTranslation: 1
+      AuthoredTotalTranslation: {x: 0, y: 0, z: 1.32}
+      AllowScaleUp: 1
+      AllowScaleDown: 1
+      MinScaleMultiplier: 0.01
+      MaxScaleMultiplier: 5
+    RootMotionSuppressWindows:
+    - Name: SlashChain_AfterWrap1_Stop
+      StartTime: 1.033
+      EndTime: 1.567
+      TranslationScale: 0
+    - Name: SlashChain_AfterWrap2_Stop
+      StartTime: 1.7
+      EndTime: 3.1
+      TranslationScale: 0
+    CodeMoveWindows: []
+  - AttackId: Raven_EvadeBackRush
+    MotionMode: 2
+    Selection:
+      MinStartDistance: 0
+      MaxStartDistance: 2.6
+      RequiredForwardClearance: 0
+      RequiredBackwardClearance: 2.2
+    WarpWindows: []
+    RootMotionSuppressWindows: []
+    CodeMoveWindows:
+    - Name: BackStep
+      StartTime: 0.2
+      EndTime: 0.8
+      TargetingMode: 1
+      ProgressMode: 0
+      NormalizedDistanceCurve:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      StopDistance: 0
+      DeadZone: 0
+      MaxMoveDistance: 4.2
+      MaxMoveSpeed: 7
+      MaxYawSpeed: 360
+      FollowTarget: 1
+      AllowBackwardCorrection: 1
+      UseDistanceBand: 0
+      OrbitSide: 2
+      OrbitAngleDegrees: 90
+    - Name: RushForward
+      StartTime: 1.03
+      EndTime: 1.333333
+      TargetingMode: 0
+      ProgressMode: 0
+      NormalizedDistanceCurve:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      StopDistance: 1.15
+      DeadZone: 0.08
+      MaxMoveDistance: 20
+      MaxMoveSpeed: 30
+      MaxYawSpeed: 720
+      FollowTarget: 1
+      AllowBackwardCorrection: 0
+      UseDistanceBand: 1
+      OrbitSide: 2
+      OrbitAngleDegrees: 90
+    - Name: RushSlash_2_Adjust
+      StartTime: 1.867
+      EndTime: 2.233333
+      TargetingMode: 0
+      ProgressMode: 0
+      NormalizedDistanceCurve:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      StopDistance: 1.15
+      DeadZone: 0.08
+      MaxMoveDistance: 2
+      MaxMoveSpeed: 10
+      MaxYawSpeed: 360
+      FollowTarget: 1
+      AllowBackwardCorrection: 0
+      UseDistanceBand: 1
+      OrbitSide: 2
+      OrbitAngleDegrees: 90
+  - AttackId: Raven_ChaseCombo
+    MotionMode: 2
+    Selection:
+      MinStartDistance: 3.5
+      MaxStartDistance: 9
+      RequiredForwardClearance: 0.5
+      RequiredBackwardClearance: 0
+    WarpWindows: []
+    RootMotionSuppressWindows: []
+    CodeMoveWindows:
+    - Name: ChaseForward
+      StartTime: 0.7
+      EndTime: 1.183333
+      TargetingMode: 0
+      ProgressMode: 0
+      NormalizedDistanceCurve:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      StopDistance: 1.15
+      DeadZone: 0.08
+      MaxMoveDistance: 10
+      MaxMoveSpeed: 20
+      MaxYawSpeed: 720
+      FollowTarget: 1
+      AllowBackwardCorrection: 1
+      UseDistanceBand: 1
+      OrbitSide: 2
+      OrbitAngleDegrees: 90
+    - Name: ChaseSlash_2_Adjust
+      StartTime: 1.5
+      EndTime: 1.716667
+      TargetingMode: 0
+      ProgressMode: 0
+      NormalizedDistanceCurve:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      StopDistance: 1.15
+      DeadZone: 0.08
+      MaxMoveDistance: 5
+      MaxMoveSpeed: 20
+      MaxYawSpeed: 420
+      FollowTarget: 1
+      AllowBackwardCorrection: 0
+      UseDistanceBand: 1
+      OrbitSide: 2
+      OrbitAngleDegrees: 90
+    - Name: ChaseSlash_3_Adjust
+      StartTime: 2.3
+      EndTime: 2.566667
+      TargetingMode: 0
+      ProgressMode: 0
+      NormalizedDistanceCurve:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      StopDistance: 1.15
+      DeadZone: 0.08
+      MaxMoveDistance: 2
+      MaxMoveSpeed: 20
+      MaxYawSpeed: 300
+      FollowTarget: 1
+      AllowBackwardCorrection: 0
+      UseDistanceBand: 1
+      OrbitSide: 2
+      OrbitAngleDegrees: 90
+  - AttackId: Raven_MoveCombo
+    MotionMode: 2
+    Selection:
+      MinStartDistance: 0
+      MaxStartDistance: 3.5
+      RequiredForwardClearance: 0.5
+      RequiredBackwardClearance: 0
+    WarpWindows: []
+    RootMotionSuppressWindows: []
+    CodeMoveWindows:
+    - Name: MoveCombo_Orbit
+      StartTime: 0.5
+      EndTime: 0.7
+      TargetingMode: 4
+      ProgressMode: 0
+      NormalizedDistanceCurve:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      StopDistance: 0
+      DeadZone: 0
+      MaxMoveDistance: 0
+      MaxMoveSpeed: 100
+      MaxYawSpeed: 720
+      FollowTarget: 1
+      AllowBackwardCorrection: 1
+      UseDistanceBand: 0
+      OrbitSide: 0
+      OrbitAngleDegrees: 110
+    - Name: MoveSlash_1_Adjust
+      StartTime: 1.05
+      EndTime: 1.416667
+      TargetingMode: 0
+      ProgressMode: 0
+      NormalizedDistanceCurve:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      StopDistance: 1.15
+      DeadZone: 0.08
+      MaxMoveDistance: 10
+      MaxMoveSpeed: 100
+      MaxYawSpeed: 720
+      FollowTarget: 1
+      AllowBackwardCorrection: 0
+      UseDistanceBand: 1
+      OrbitSide: 2
+      OrbitAngleDegrees: 90
+    - Name: MoveSlash_2_Adjust
+      StartTime: 2.216667
+      EndTime: 2.55
+      TargetingMode: 0
+      ProgressMode: 0
+      NormalizedDistanceCurve:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      StopDistance: 1.15
+      DeadZone: 0.08
+      MaxMoveDistance: 3
+      MaxMoveSpeed: 100
+      MaxYawSpeed: 720
+      FollowTarget: 1
+      AllowBackwardCorrection: 0
+      UseDistanceBand: 1
+      OrbitSide: 2
+      OrbitAngleDegrees: 90
+  - AttackId: Raven_ChaseGrab
+    MotionMode: 2
+    Selection:
+      MinStartDistance: 3.5
+      MaxStartDistance: 9
+      RequiredForwardClearance: 0.5
+      RequiredBackwardClearance: 0
+    WarpWindows: []
+    RootMotionSuppressWindows: []
+    CodeMoveWindows:
+    - Name: ChaseGrab_Approach
+      StartTime: 0.9
+      EndTime: 1.1
+      TargetingMode: 0
+      ProgressMode: 0
+      NormalizedDistanceCurve:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      StopDistance: 1.15
+      DeadZone: 0.08
+      MaxMoveDistance: 30
+      MaxMoveSpeed: 100
+      MaxYawSpeed: 720
+      FollowTarget: 1
+      AllowBackwardCorrection: 1
+      UseDistanceBand: 1
+      OrbitSide: 2
+      OrbitAngleDegrees: 90
+    - Name: ChaseGrab_Approach2
+      StartTime: 1.1
+      EndTime: 1.833333
+      TargetingMode: 0
+      ProgressMode: 0
+      NormalizedDistanceCurve:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      StopDistance: 1.15
+      DeadZone: 0.08
+      MaxMoveDistance: 30
+      MaxMoveSpeed: 100
+      MaxYawSpeed: 720
+      FollowTarget: 1
+      AllowBackwardCorrection: 1
+      UseDistanceBand: 1
+      OrbitSide: 2
+      OrbitAngleDegrees: 90
+  - AttackId: Raven_MoveChainCombo
+    MotionMode: 2
+    Selection:
+      MinStartDistance: 0
+      MaxStartDistance: 3.5
+      RequiredForwardClearance: 0.5
+      RequiredBackwardClearance: 0
+    WarpWindows: []
+    RootMotionSuppressWindows: []
+    CodeMoveWindows:
+    - Name: MoveChain_Orbit_1
+      StartTime: 0.2
+      EndTime: 0.4
+      TargetingMode: 4
+      ProgressMode: 0
+      NormalizedDistanceCurve:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      StopDistance: 1.15
+      DeadZone: 0
+      MaxMoveDistance: 0
+      MaxMoveSpeed: 100
+      MaxYawSpeed: 720
+      FollowTarget: 1
+      AllowBackwardCorrection: 1
+      UseDistanceBand: 0
+      OrbitSide: 1
+      OrbitAngleDegrees: 100
+    - Name: MoveChainSlash_1_Adjust
+      StartTime: 0.6833333
+      EndTime: 1.183333
+      TargetingMode: 0
+      ProgressMode: 0
+      NormalizedDistanceCurve:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      StopDistance: 1.15
+      DeadZone: 0.08
+      MaxMoveDistance: 10
+      MaxMoveSpeed: 100
+      MaxYawSpeed: 540
+      FollowTarget: 1
+      AllowBackwardCorrection: 0
+      UseDistanceBand: 1
+      OrbitSide: 2
+      OrbitAngleDegrees: 90
+    - Name: MoveChainSlash_1_Adjust2
+      StartTime: 1.416667
+      EndTime: 1.733333
+      TargetingMode: 0
+      ProgressMode: 0
+      NormalizedDistanceCurve:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      StopDistance: 1.15
+      DeadZone: 0.08
+      MaxMoveDistance: 10
+      MaxMoveSpeed: 100
+      MaxYawSpeed: 720
+      FollowTarget: 1
+      AllowBackwardCorrection: 0
+      UseDistanceBand: 1
+      OrbitSide: 2
+      OrbitAngleDegrees: 90
+    - Name: MoveChainSlash_2_Back
+      StartTime: 2.116667
+      EndTime: 2.9
+      TargetingMode: 1
+      ProgressMode: 0
+      NormalizedDistanceCurve:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      StopDistance: 1.15
+      DeadZone: 0
+      MaxMoveDistance: 4
+      MaxMoveSpeed: 100
+      MaxYawSpeed: 720
+      FollowTarget: 0
+      AllowBackwardCorrection: 0
+      UseDistanceBand: 0
+      OrbitSide: 2
+      OrbitAngleDegrees: 90
+    - Name: MoveChain_Forward2
+      StartTime: 3.366667
+      EndTime: 3.666667
+      TargetingMode: 0
+      ProgressMode: 0
+      NormalizedDistanceCurve:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      StopDistance: 1.15
+      DeadZone: 0.08
+      MaxMoveDistance: 10
+      MaxMoveSpeed: 100
+      MaxYawSpeed: 480
+      FollowTarget: 1
+      AllowBackwardCorrection: 0
+      UseDistanceBand: 1
+      OrbitSide: 2
+      OrbitAngleDegrees: 90
+    - Name: MoveChainSlash_2_Adjust
+      StartTime: 3.666667
+      EndTime: 3.85
+      TargetingMode: 0
+      ProgressMode: 0
+      NormalizedDistanceCurve:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      StopDistance: 1.15
+      DeadZone: 0.08
+      MaxMoveDistance: 2
+      MaxMoveSpeed: 100
+      MaxYawSpeed: 720
+      FollowTarget: 1
+      AllowBackwardCorrection: 1
+      UseDistanceBand: 1
+      OrbitSide: 2
+      OrbitAngleDegrees: 90
+    - Name: MoveChainSlash_2_Adjust2
+      StartTime: 4.15
+      EndTime: 4.6
+      TargetingMode: 0
+      ProgressMode: 0
+      NormalizedDistanceCurve:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      StopDistance: 1.15
+      DeadZone: 0.08
+      MaxMoveDistance: 10
+      MaxMoveSpeed: 100
+      MaxYawSpeed: 720
+      FollowTarget: 1
+      AllowBackwardCorrection: 0
+      UseDistanceBand: 1
+      OrbitSide: 2
+      OrbitAngleDegrees: 90
+    - Name: MoveChain_Orbit_3
+      StartTime: 5.2
+      EndTime: 5.4
+      TargetingMode: 4
+      ProgressMode: 0
+      NormalizedDistanceCurve:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      StopDistance: 1.15
+      DeadZone: 0
+      MaxMoveDistance: 0
+      MaxMoveSpeed: 100
+      MaxYawSpeed: 720
+      FollowTarget: 0
+      AllowBackwardCorrection: 0
+      UseDistanceBand: 0
+      OrbitSide: 0
+      OrbitAngleDegrees: 110
+    - Name: MoveChainSlash_3_Adjust
+      StartTime: 5.75
+      EndTime: 6.116667
+      TargetingMode: 0
+      ProgressMode: 0
+      NormalizedDistanceCurve:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      StopDistance: 1.15
+      DeadZone: 0.08
+      MaxMoveDistance: 10
+      MaxMoveSpeed: 100
+      MaxYawSpeed: 720
+      FollowTarget: 1
+      AllowBackwardCorrection: 0
+      UseDistanceBand: 1
+      OrbitSide: 2
+      OrbitAngleDegrees: 90
+  - AttackId: Raven_SlashCombo
+    MotionMode: 1
+    Selection:
+      MinStartDistance: 0
+      MaxStartDistance: 3.5
+      RequiredForwardClearance: 0.5
+      RequiredBackwardClearance: 0
+    WarpWindows:
+    - Name: SlashCombo_1_Warp
+      StartTime: 1.05
+      EndTime: 1.45
+      WarpMode: 1
+      TargetingMode: 0
+      StopDistance: 1.15
+      DeadZone: 0.08
+      MaxMovePerFrame: 10
+      MaxYawSpeed: 720
+      FollowTarget: 1
+      WarpTranslation: 1
+      UseAuthoredTotalTranslation: 1
+      AuthoredTotalTranslation: {x: 0, y: 0, z: 5.1735}
+      AllowScaleUp: 1
+      AllowScaleDown: 1
+      MinScaleMultiplier: 0.01
+      MaxScaleMultiplier: 2
+    - Name: SlashCombo_2_Warp
+      StartTime: 1.933333
+      EndTime: 2.033333
+      WarpMode: 1
+      TargetingMode: 0
+      StopDistance: 1.15
+      DeadZone: 0.08
+      MaxMovePerFrame: 10
+      MaxYawSpeed: 420
+      FollowTarget: 1
+      WarpTranslation: 1
+      UseAuthoredTotalTranslation: 1
+      AuthoredTotalTranslation: {x: 0, y: 0, z: 1.421}
+      AllowScaleUp: 1
+      AllowScaleDown: 1
+      MinScaleMultiplier: 0.01
+      MaxScaleMultiplier: 4
+    - Name: SlashCombo_3_Warp
+      StartTime: 2.316667
+      EndTime: 2.6
+      WarpMode: 1
+      TargetingMode: 0
+      StopDistance: 1.15
+      DeadZone: 0.08
+      MaxMovePerFrame: 10
+      MaxYawSpeed: 420
+      FollowTarget: 1
+      WarpTranslation: 1
+      UseAuthoredTotalTranslation: 1
+      AuthoredTotalTranslation: {x: 0, y: 0, z: 1.44801}
+      AllowScaleUp: 1
+      AllowScaleDown: 1
+      MinScaleMultiplier: 0.01
+      MaxScaleMultiplier: 4
+    - Name: SlashCombo_4_Warp
+      StartTime: 2.916667
+      EndTime: 3.116667
+      WarpMode: 1
+      TargetingMode: 0
+      StopDistance: 1.15
+      DeadZone: 0.08
+      MaxMovePerFrame: 10
+      MaxYawSpeed: 420
+      FollowTarget: 1
+      WarpTranslation: 1
+      UseAuthoredTotalTranslation: 1
+      AuthoredTotalTranslation: {x: 0, y: 0, z: 1.64186}
+      AllowScaleUp: 1
+      AllowScaleDown: 1
+      MinScaleMultiplier: 0.01
+      MaxScaleMultiplier: 4
+    - Name: SlashCombo_YellowIai_Warp
+      StartTime: 4.2
+      EndTime: 4.366667
+      WarpMode: 1
+      TargetingMode: 0
+      StopDistance: 1.15
+      DeadZone: 0.08
+      MaxMovePerFrame: 10
+      MaxYawSpeed: 540
+      FollowTarget: 1
+      WarpTranslation: 1
+      UseAuthoredTotalTranslation: 1
+      AuthoredTotalTranslation: {x: 0, y: 0, z: 2.46635}
+      AllowScaleUp: 1
+      AllowScaleDown: 1
+      MinScaleMultiplier: 0.01
+      MaxScaleMultiplier: 4
+    RootMotionSuppressWindows:
+    - Name: SlashCombo_AfterWarp_Stop1
+      StartTime: 1.45
+      EndTime: 1.933333
+      TranslationScale: 0
+    - Name: SlashCombo_AfterWarp_Stop2
+      StartTime: 2.033333
+      EndTime: 2.316667
+      TranslationScale: 0
+    - Name: SlashCombo_AfterWarp_Stop3
+      StartTime: 2.6
+      EndTime: 2.916667
+      TranslationScale: 0
+    - Name: SlashCombo_AfterWarp_Stop4
+      StartTime: 3.116667
+      EndTime: 4.2
+      TranslationScale: 0
+    - Name: SlashCombo_AfterWarp_Stop5
+      StartTime: 4.366667
+      EndTime: 5.5
+      TranslationScale: 0
+    CodeMoveWindows: []
+  - AttackId: Boss_HitStagger
+    MotionMode: 2
+    Selection:
+      MinStartDistance: 0
+      MaxStartDistance: 6
+      RequiredForwardClearance: 0
+      RequiredBackwardClearance: 0
+    WarpWindows: []
+    RootMotionSuppressWindows: []
+    CodeMoveWindows:
+    - Name: HitReactionMove
+      StartTime: 0.1333333
+      EndTime: 0.75
+      TargetingMode: 1
+      ProgressMode: 0
+      NormalizedDistanceCurve:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 3
+          time: 0
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 34
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        - serializedVersion: 3
+          time: 1
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 34
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      StopDistance: 0
+      DeadZone: 0
+      MaxMoveDistance: 0.5
+      MaxMoveSpeed: 100
+      MaxYawSpeed: 0
+      FollowTarget: 0
+      AllowBackwardCorrection: 0
+      UseDistanceBand: 0
+      OrbitSide: 2
+      OrbitAngleDegrees: 0
+  - AttackId: Boss_Knockdown
+    MotionMode: 2
+    Selection:
+      MinStartDistance: 0
+      MaxStartDistance: 6
+      RequiredForwardClearance: 0
+      RequiredBackwardClearance: 0
+    WarpWindows: []
+    RootMotionSuppressWindows: []
+    CodeMoveWindows:
+    - Name: KnockdownWrap
+      StartTime: 0
+      EndTime: 0.5166667
+      TargetingMode: 1
+      ProgressMode: 1
+      NormalizedDistanceCurve:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 3
+          time: 0
+          value: 0
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        - serializedVersion: 3
+          time: 0.315
+          value: 0.55
+          inSlope: 0.3
+          outSlope: 0.3
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0.11
+        - serializedVersion: 3
+          time: 0.72
+          value: 0.9
+          inSlope: 0.85
+          outSlope: 0.85
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0.12
+          outWeight: 0.12
+        - serializedVersion: 3
+          time: 1
+          value: 1
+          inSlope: 0.05
+          outSlope: 0.05
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0.13
+          outWeight: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      StopDistance: 0
+      DeadZone: 0
+      MaxMoveDistance: 2.2
+      MaxMoveSpeed: 0
+      MaxYawSpeed: 0
+      FollowTarget: 0
+      AllowBackwardCorrection: 1
+      UseDistanceBand: 0
+      OrbitSide: 2
+      OrbitAngleDegrees: 90
+  - AttackId: Raven_BetaChargeCombo
+    MotionMode: 2
+    Selection:
+      MinStartDistance: 0
+      MaxStartDistance: 3.5
+      RequiredForwardClearance: 0.5
+      RequiredBackwardClearance: 0
+    WarpWindows: []
+    RootMotionSuppressWindows: []
+    CodeMoveWindows:
+    - Name: BetaCharge_Move1
+      StartTime: 1.35
+      EndTime: 1.55
+      TargetingMode: 0
+      ProgressMode: 0
+      NormalizedDistanceCurve:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 0
+        m_PostInfinity: 0
+        m_RotationOrder: 0
+      StopDistance: 1.15
+      DeadZone: 0.08
+      MaxMoveDistance: 5
+      MaxMoveSpeed: 30
+      MaxYawSpeed: 360
+      FollowTarget: 1
+      AllowBackwardCorrection: 0
+      UseDistanceBand: 1
+      OrbitSide: 2
+      OrbitAngleDegrees: 90
+    - Name: BetaCharge_Move2
+      StartTime: 2.666667
+      EndTime: 3.066667
+      TargetingMode: 0
+      ProgressMode: 0
+      NormalizedDistanceCurve:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 0
+        m_PostInfinity: 0
+        m_RotationOrder: 0
+      StopDistance: 1.15
+      DeadZone: 0.08
+      MaxMoveDistance: 5
+      MaxMoveSpeed: 30
+      MaxYawSpeed: 360
+      FollowTarget: 1
+      AllowBackwardCorrection: 0
+      UseDistanceBand: 1
+      OrbitSide: 2
+      OrbitAngleDegrees: 90
+    - Name: BetaCharge_Move3
+      StartTime: 4.8
+      EndTime: 5.45
+      TargetingMode: 0
+      ProgressMode: 0
+      NormalizedDistanceCurve:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 0
+        m_PostInfinity: 0
+        m_RotationOrder: 0
+      StopDistance: 1.15
+      DeadZone: 0.08
+      MaxMoveDistance: 10
+      MaxMoveSpeed: 60
+      MaxYawSpeed: 360
+      FollowTarget: 1
+      AllowBackwardCorrection: 0
+      UseDistanceBand: 1
+      OrbitSide: 2
+      OrbitAngleDegrees: 90
+  - AttackId: Raven_BurstAreaSlash
+    MotionMode: 2
+    Selection:
+      MinStartDistance: 0
+      MaxStartDistance: 3.5
+      RequiredForwardClearance: 0.5
+      RequiredBackwardClearance: 0
+    WarpWindows: []
+    RootMotionSuppressWindows: []
+    CodeMoveWindows:
+    - Name: BurstAreaSlash_Warp1
+      StartTime: 2.983333
+      EndTime: 3.266667
+      TargetingMode: 0
+      ProgressMode: 0
+      NormalizedDistanceCurve:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 0
+        m_PostInfinity: 0
+        m_RotationOrder: 0
+      StopDistance: 1.15
+      DeadZone: 0.08
+      MaxMoveDistance: 20
+      MaxMoveSpeed: 50
+      MaxYawSpeed: 0
+      FollowTarget: 1
+      AllowBackwardCorrection: 0
+      UseDistanceBand: 1
+      OrbitSide: 2
+      OrbitAngleDegrees: 0
+  - AttackId: Raven_SwordAuraCombo
+    MotionMode: 2
+    Selection:
+      MinStartDistance: 6
+      MaxStartDistance: 11
+      RequiredForwardClearance: 0
+      RequiredBackwardClearance: 0
+    WarpWindows: []
+    RootMotionSuppressWindows: []
+    CodeMoveWindows:
+    - Name: AimShot1
+      StartTime: 0.21666667
+      EndTime: 0.6
+      TargetingMode: 0
+      ProgressMode: 0
+      NormalizedDistanceCurve:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      StopDistance: 0
+      DeadZone: 0
+      MaxMoveDistance: 0
+      MaxMoveSpeed: 0
+      MaxYawSpeed: 720
+      FollowTarget: 1
+      AllowBackwardCorrection: 0
+      UseDistanceBand: 0
+      OrbitSide: 2
+      OrbitAngleDegrees: 90
+    - Name: AimShot2
+      StartTime: 0.6666667
+      EndTime: 0.85
+      TargetingMode: 0
+      ProgressMode: 0
+      NormalizedDistanceCurve:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      StopDistance: 0
+      DeadZone: 0
+      MaxMoveDistance: 0
+      MaxMoveSpeed: 0
+      MaxYawSpeed: 720
+      FollowTarget: 1
+      AllowBackwardCorrection: 0
+      UseDistanceBand: 0
+      OrbitSide: 2
+      OrbitAngleDegrees: 90
+    - Name: AimShot3
+      StartTime: 1.466667
+      EndTime: 2.083333
+      TargetingMode: 0
+      ProgressMode: 0
+      NormalizedDistanceCurve:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      StopDistance: 0
+      DeadZone: 0
+      MaxMoveDistance: 0
+      MaxMoveSpeed: 0
+      MaxYawSpeed: 720
+      FollowTarget: 1
+      AllowBackwardCorrection: 0
+      UseDistanceBand: 0
+      OrbitSide: 2
+      OrbitAngleDegrees: 90
+  - AttackId: Raven_EvadeBackSwordAura
+    MotionMode: 1
+    Selection:
+      MinStartDistance: 0
+      MaxStartDistance: 3.5
+      RequiredForwardClearance: 0
+      RequiredBackwardClearance: 2.2
+    WarpWindows: []
+    RootMotionSuppressWindows: []
+    CodeMoveWindows:
+    - Name: AimShot
+      StartTime: 1.05
+      EndTime: 1.8
+      TargetingMode: 0
+      ProgressMode: 0
+      NormalizedDistanceCurve:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      StopDistance: 0
+      DeadZone: 0
+      MaxMoveDistance: 0
+      MaxMoveSpeed: 0
+      MaxYawSpeed: 720
+      FollowTarget: 1
+      AllowBackwardCorrection: 0
+      UseDistanceBand: 0
+      OrbitSide: 2
+      OrbitAngleDegrees: 90
+  - AttackId: Raven_RapidMoveBack
+    MotionMode: 2
+    Selection:
+      MinStartDistance: 0
+      MaxStartDistance: 2.6
+      RequiredForwardClearance: 0
+      RequiredBackwardClearance: 2.2
+    WarpWindows: []
+    RootMotionSuppressWindows: []
+    CodeMoveWindows:
+    - Name: BackStep
+      StartTime: 0.3
+      EndTime: 0.5
+      TargetingMode: 1
+      ProgressMode: 0
+      NormalizedDistanceCurve:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      StopDistance: 0
+      DeadZone: 0
+      MaxMoveDistance: 7
+      MaxMoveSpeed: 35
+      MaxYawSpeed: 0
+      FollowTarget: 0
+      AllowBackwardCorrection: 1
+      UseDistanceBand: 0
+      OrbitSide: 2
+      OrbitAngleDegrees: 90

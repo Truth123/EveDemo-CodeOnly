@@ -1,0 +1,606 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 91f0da7d62113f14b8f2e70862e010b2, type: 3}
+  m_Name: EveActionMotionProfile
+  m_EditorClassIdentifier: ProjectEVE.Runtime::ProjectEVE.Player.Movement.PlayerActionMotionProfile
+  motions:
+  - motionId: 10
+    duration: 0.44
+    distance: 2.4
+    normalizedDistanceCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 0.1805
+        value: 0.025
+        inSlope: 0.3948002
+        outSlope: 0.3948002
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0.087422185
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    stopOnSideCollision: 1
+    targetMode: 0
+    maxTargetDistance: 0
+    maxTargetAngle: 0
+    stopDistance: 0
+  - motionId: 11
+    duration: 0.44
+    distance: 2
+    normalizedDistanceCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 0.18050812
+        value: 0.025072504
+        inSlope: 0.30096662
+        outSlope: 0.30096662
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0.0840072
+      - serializedVersion: 3
+        time: 0.69319147
+        value: 0.6346291
+        inSlope: 1.2637202
+        outSlope: 1.2637202
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0.1366773
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: -0
+        outSlope: -0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.12752591
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    stopOnSideCollision: 1
+    targetMode: 0
+    maxTargetDistance: 0
+    maxTargetAngle: 0
+    stopDistance: 0
+  - motionId: 12
+    duration: 0.44
+    distance: 2.3
+    normalizedDistanceCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 0.18
+        value: 0.025
+        inSlope: 0.3797726
+        outSlope: 0.3797726
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0.08190624
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    stopOnSideCollision: 1
+    targetMode: 0
+    maxTargetDistance: 0
+    maxTargetAngle: 0
+    stopDistance: 0
+  - motionId: 13
+    duration: 0.44
+    distance: 2.3
+    normalizedDistanceCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 0.18
+        value: 0.025
+        inSlope: 0.37000492
+        outSlope: 0.37000492
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0.048185576
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    stopOnSideCollision: 1
+    targetMode: 0
+    maxTargetDistance: 0
+    maxTargetAngle: 0
+    stopDistance: 0
+  - motionId: 20
+    duration: 1.208
+    distance: 2.8
+    normalizedDistanceCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 0.17011298
+        value: 0.00037281215
+        inSlope: -0.035850134
+        outSlope: -0.035850134
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.7134399
+      - serializedVersion: 3
+        time: 0.3784608
+        value: 0.3160321
+        inSlope: 1.6022542
+        outSlope: 1.6022542
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0.1895972
+      - serializedVersion: 3
+        time: 0.6934593
+        value: 0.7420285
+        inSlope: 0.95887583
+        outSlope: 0.95887583
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0.2311612
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    stopOnSideCollision: 1
+    targetMode: 0
+    maxTargetDistance: 0
+    maxTargetAngle: 0
+    stopDistance: 0
+  - motionId: 21
+    duration: 0.833
+    distance: 2.6
+    normalizedDistanceCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 0.09997083
+        value: -0.0004327295
+        inSlope: 0.08420134
+        outSlope: 0.08420134
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.20733733
+      - serializedVersion: 3
+        time: 0.34227452
+        value: 0.34365362
+        inSlope: 1.3759699
+        outSlope: 1.3759699
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0.14338332
+      - serializedVersion: 3
+        time: 0.6884721
+        value: 0.791272
+        inSlope: 0.95128787
+        outSlope: 0.95128787
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0.19817439
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 0.48012626
+        outSlope: 0.48012626
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.14146331
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    stopOnSideCollision: 1
+    targetMode: 0
+    maxTargetDistance: 0
+    maxTargetAngle: 0
+    stopDistance: 0
+  - motionId: 22
+    duration: 0.833
+    distance: 2.7
+    normalizedDistanceCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 0.2
+        value: 0.002396524
+        inSlope: 0.077720106
+        outSlope: 0.077720106
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0.07888072
+      - serializedVersion: 3
+        time: 0.62376845
+        value: 0.5359765
+        inSlope: 1.6302881
+        outSlope: 1.6302881
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.11471527
+        outWeight: 0.12215551
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 0.84006363
+        outSlope: 0.84006363
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.15310583
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    stopOnSideCollision: 1
+    targetMode: 0
+    maxTargetDistance: 0
+    maxTargetAngle: 0
+    stopDistance: 0
+  - motionId: 23
+    duration: 0.875
+    distance: 2.7
+    normalizedDistanceCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 0.19
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 0.6195899
+        value: 0.5115607
+        inSlope: 1.0401765
+        outSlope: 1.0401765
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.09206495
+        outWeight: 0.23484379
+      - serializedVersion: 3
+        time: 0.99920654
+        value: 1
+        inSlope: 0.9874164
+        outSlope: 0.9874164
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.15232623
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    stopOnSideCollision: 1
+    targetMode: 0
+    maxTargetDistance: 0
+    maxTargetAngle: 0
+    stopDistance: 0
+  - motionId: 30
+    duration: 0.5166667
+    distance: 0.6
+    normalizedDistanceCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 0.22
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 0.6639187
+        value: 0.57607657
+        inSlope: 1.4928513
+        outSlope: 1.4928513
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0.135356
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 0.02848659
+        outSlope: 0.02848659
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.12746082
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    stopOnSideCollision: 1
+    targetMode: 0
+    maxTargetDistance: 0
+    maxTargetAngle: 0
+    stopDistance: 0
+  - motionId: 31
+    duration: 0.5166667
+    distance: 0.6
+    normalizedDistanceCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 0.22
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 0.6639187
+        value: 0.57607657
+        inSlope: 1.4928513
+        outSlope: 1.4928513
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0.135356
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 0.02848659
+        outSlope: 0.02848659
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.12746082
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    stopOnSideCollision: 1
+    targetMode: 0
+    maxTargetDistance: 0
+    maxTargetAngle: 0
+    stopDistance: 0
+  - motionId: 40
+    duration: 1.583
+    distance: 2.2
+    normalizedDistanceCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 0.315
+        value: 0.55
+        inSlope: 0.29839376
+        outSlope: 0.29839376
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0.1130373
+      - serializedVersion: 3
+        time: 0.63157
+        value: 0.8208364
+        inSlope: 0.08595569
+        outSlope: 0.08595569
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0.09388083
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    stopOnSideCollision: 1
+    targetMode: 0
+    maxTargetDistance: 0
+    maxTargetAngle: 0
+    stopDistance: 0
+  - motionId: 50
+    duration: 0.28
+    distance: 1.85
+    normalizedDistanceCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 2.2
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 0.35
+        value: 0.6
+        inSlope: 1.4
+        outSlope: 1
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 0.75
+        value: 0.92
+        inSlope: 0.6
+        outSlope: 0.3
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 0.2
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    stopOnSideCollision: 1
+    targetMode: 1
+    maxTargetDistance: 3
+    maxTargetAngle: 60
+    stopDistance: 1.15
