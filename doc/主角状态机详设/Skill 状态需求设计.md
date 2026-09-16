@@ -405,20 +405,20 @@ End   = 0.56s
 
 ## 13. Skill 输入响应规则
 
-| 输入                 | 响应方式                                        | 是否缓存 |
-| ------------------ | ------------------------------------------- | ---: |
+| 输入                 | 响应方式                                                        | 是否缓存 |
+| ------------------ | ----------------------------------------------------------- | ---: |
 | MoveInput          | `Cancel_MovementReturn` 内即时返回 Locomotion；否则只用于 SkillEnd 后去向 |    否 |
-| LookInput          | 持续响应                                        |    否 |
-| LockOnPressed      | 不响应                                         |    否 |
-| LightAttackPressed | AttackResetWindow 内即时响应                     |    否 |
-| HeavyAttackPressed | AttackResetWindow 内即时响应                     |    否 |
-| EvadePressed       | EvadeBufferWindow 内缓存，EvadeCancelWindow 内消费 |    是 |
-| EvadeHeld          | 读取，不触发 Sprint                               |    否 |
-| EvadeReleased      | 清除 Evade 缓存                                 |    否 |
-| GuardHeld          | GuardCancelWindow 内即时响应                     |    否 |
-| Skill1Pressed      | SkillResetWindow 内即时响应                      |    否 |
-| Skill2Pressed      | 不响应                                         |    否 |
-| RecoverHpPressed   | 不响应                                         |    否 |
+| LookInput          | 持续响应                                                        |    否 |
+| LockOnPressed      | 不响应                                                         |    否 |
+| LightAttackPressed | AttackResetWindow 内即时响应                                     |    否 |
+| HeavyAttackPressed | AttackResetWindow 内即时响应                                     |    否 |
+| EvadePressed       | EvadeBufferWindow 内缓存，EvadeCancelWindow 内消费                 |    是 |
+| EvadeHeld          | 读取，不触发 Sprint                                               |    否 |
+| EvadeReleased      | 清除 Evade 缓存                                                 |    否 |
+| GuardHeld          | GuardCancelWindow 内即时响应                                     |    否 |
+| Skill1Pressed      | SkillResetWindow 内即时响应                                      |    否 |
+| Skill2Pressed      | 不响应                                                         |    否 |
+| RecoverHpPressed   | 不响应                                                         |    否 |
 
 Skill 状态总体输入响应为：Move 只在 `Cancel_MovementReturn` 内即时返回 Locomotion、窗口外仅用于 SkillEnd 去向且不缓存；Look 一直响应，LockOn 不响应，Light / HeavyAttack 在 ResetWindow 响应，EvadeInput 缓存并在 EvadeCancelWindow 响应，GuardInput 在 GuardCancelWindow 响应，SkillInput 在重置区间响应，RecoverInput 不响应。
 

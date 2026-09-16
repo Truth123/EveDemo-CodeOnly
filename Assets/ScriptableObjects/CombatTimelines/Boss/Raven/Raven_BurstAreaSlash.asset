@@ -48,7 +48,7 @@ MonoBehaviour:
     Clips:
     - rid: 117198392379834692
     - rid: 117198392379834693
-  angleLimit: 180
+  angleLimit: 90
   cooldown: 6
   naturalRecoveryDuration: 1.3
   defenseRewardRules:

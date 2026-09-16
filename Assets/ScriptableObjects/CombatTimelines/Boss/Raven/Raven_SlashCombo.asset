@@ -101,7 +101,7 @@ MonoBehaviour:
         CanBePerfectEvaded: 1
         MaxHitsPerTarget: 1
         EffectiveRange: 2.15
-        EffectiveAngle: 130
+        EffectiveAngle: 180
         TriggersPerfectGuardBossStagger: 0
         HitIndex: 0
         SourcePart: 1
@@ -143,7 +143,7 @@ MonoBehaviour:
         CanBePerfectEvaded: 1
         MaxHitsPerTarget: 1
         EffectiveRange: 2.25
-        EffectiveAngle: 135
+        EffectiveAngle: 360
         TriggersPerfectGuardBossStagger: 0
         HitIndex: 2
         SourcePart: 1
@@ -164,7 +164,7 @@ MonoBehaviour:
         CanBePerfectEvaded: 1
         MaxHitsPerTarget: 1
         EffectiveRange: 2.35
-        EffectiveAngle: 140
+        EffectiveAngle: 360
         TriggersPerfectGuardBossStagger: 0
         HitIndex: 3
         SourcePart: 1

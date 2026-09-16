@@ -895,7 +895,7 @@ MonoBehaviour:
       DeadZone: 0.08
       MaxMoveDistance: 20
       MaxMoveSpeed: 50
-      MaxYawSpeed: 0
+      MaxYawSpeed: 720
       FollowTarget: 1
       AllowBackwardCorrection: 0
       UseDistanceBand: 1

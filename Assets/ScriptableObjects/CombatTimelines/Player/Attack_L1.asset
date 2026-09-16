@@ -109,8 +109,8 @@ MonoBehaviour:
       data:
         Name: Active
         CapabilityId: 2
-        StartTime: 0.21666667
-        EndTime: 0.43333334
+        StartTime: 0.23333333
+        EndTime: 0.46666667
     - rid: 3564762341354242381
       type: {class: CombatAttackWindowClip, ns: ProjectEVE.Combat.Timeline, asm: ProjectEVE.Runtime}
       data:
