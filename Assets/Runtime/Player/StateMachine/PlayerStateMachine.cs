@@ -316,9 +316,7 @@ namespace ProjectEVE.Player
             }
         }
 
-        /// <summary>
-        /// 执行 Evaluate / Forced / Transition 相关逻辑，并维护 玩家状态机 模块的运行时一致性。
-        /// </summary>
+
         private PlayerStateId EvaluateForcedTransition()
         {
             if (Context.Resources.IsDead && Context.CurrentState != PlayerStateId.Dead)

@@ -11,9 +11,7 @@ namespace ProjectEVE.Boss.Movement
     /// </summary>
     public sealed class BossPhaseMoveVfx : MonoBehaviour
     {
-        /// <summary>
-        /// 执行 Play / Begin 相关逻辑，并维护 Boss 位移 模块的运行时一致性。
-        /// </summary>
+
         [SerializeField] private ParticleSystem startEffect;
         [SerializeField] private ParticleSystem endEffect;
         [SerializeField] private ParticleSystem trailEffect;

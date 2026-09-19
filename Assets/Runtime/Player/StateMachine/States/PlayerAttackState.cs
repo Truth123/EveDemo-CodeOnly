@@ -23,16 +23,12 @@ namespace ProjectEVE.Player.States
         private float attackStartTime;
         private int nextAttackInstanceId;
 
-        /// <summary>
-        /// 创建 PlayerAttackState 实例，并准备 玩家状态机 模块需要的初始状态。
-        /// </summary>
+
         public PlayerAttackState() : base(PlayerStateId.Attack)
         {
         }
 
-        /// <summary>
-        /// 执行 Enter 相关逻辑，并维护 玩家状态机 模块的运行时一致性。
-        /// </summary>
+
         public override void Enter(PlayerStateContext context)
         {
             AttackInputType inputType = context.RequestedAttackInput != AttackInputType.None

@@ -101,9 +101,7 @@ namespace ProjectEVE.Player.Combat
             };
         }
 
-        /// <summary>
-        /// 执行 Should / Ignore / Ground / Hit 相关逻辑，并维护 玩家战斗 模块的运行时一致性。
-        /// </summary>
+
         private static bool ShouldIgnoreGroundHit(PlayerStateContext context, in CombatHitData hit, CombatHitResult result)
         {
             return context.CurrentState == PlayerStateId.Knockdown &&

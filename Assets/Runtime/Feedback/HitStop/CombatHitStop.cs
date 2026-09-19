@@ -25,9 +25,7 @@ namespace ProjectEVE.Feedback
         private float originalTimeScale = 1f;
         private float originalFixedDeltaTime = 0.02f;
 
-        /// <summary>
-        /// 执行 Request 相关逻辑，并维护 战斗反馈 模块的运行时一致性。
-        /// </summary>
+
         public void Request(float duration, float timeScale)
         {
             if (!enableHitStop || duration <= 0f)

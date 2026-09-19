@@ -317,7 +317,7 @@ namespace ProjectEVE.Boss.Actor
             arenaNearEdgeDistance = Mathf.Max(arenaCriticalEdgeDistance, arenaNearEdgeDistance);
         }
 
-        /// <summary>每帧由 BossActor 作为唯一入口推进正式运行时。</summary>
+
         private void Update()
         {
             TickActor(Time.deltaTime);
@@ -490,9 +490,6 @@ namespace ProjectEVE.Boss.Actor
             return movementSystem.CanStartActionReadOnly(actionDefinition, target);
         }
 
-        /// <summary>
-        /// 创建 Boss 运行时 Timeline 播放快照；无 ActionId 的状态不参与编辑器跟随。
-        /// </summary>
         private static bool TryCreatePlaybackSnapshot(
             BossStateId state,
             string actionId,
@@ -513,9 +510,6 @@ namespace ProjectEVE.Boss.Actor
             return true;
         }
 
-        /// <summary>
-        /// 推进 Boss 正式运行时。由 BossActor 作为唯一 MonoBehaviour 入口调度。
-        /// </summary>
         private void TickRuntime(float deltaTime)
         {
             if (CurrentState == BossStateId.None)
@@ -1450,17 +1444,11 @@ namespace ProjectEVE.Boss.Actor
                 target);
         }
 
-        /// <summary>
-        /// 只检查 Boss 站立硬直 Timeline 是否存在，供 ReactionSystem 决策按需调用。
-        /// </summary>
         private bool HasBossHitStaggerConfig()
         {
             return runtimeConfigResolver.TryGetHitStaggerConfig(out _);
         }
 
-        /// <summary>
-        /// 只检查 Boss 击倒 Timeline 是否存在，供 ReactionSystem 决策按需调用。
-        /// </summary>
         private bool HasBossKnockdownConfig()
         {
             return runtimeConfigResolver.TryGetKnockdownConfig(out _);
@@ -1957,9 +1945,7 @@ namespace ProjectEVE.Boss.Actor
             }
         }
 
-        /// <summary>
-        /// 执行 Direction / To / Target 相关逻辑，并维护 Boss Actor 模块的运行时一致性。
-        /// </summary>
+
         private Vector3 DirectionToTarget()
         {
             if (target == null)
@@ -1972,9 +1958,7 @@ namespace ProjectEVE.Boss.Actor
             return direction.sqrMagnitude > 0.0001f ? direction.normalized : transform.forward;
         }
 
-        /// <summary>
-        /// 解析 Received / Hit / Direction 结果，并把多来源输入收敛为后续逻辑可直接消费的数据。
-        /// </summary>
+
         private BossHitDirectionId ResolveReceivedHitDirection(in CombatHitData hit, Component source)
         {
             Vector3 attackSourceOffset = Vector3.zero;
@@ -2012,17 +1996,11 @@ namespace ProjectEVE.Boss.Actor
             return forwardDot >= 0f ? BossHitDirectionId.Front : BossHitDirectionId.Back;
         }
 
-        /// <summary>
-        /// 执行 Angle / To / Target 相关逻辑，并维护 Boss Actor 模块的运行时一致性。
-        /// </summary>
         private float AngleToTarget()
         {
             return Vector3.Angle(transform.forward, DirectionToTarget());
         }
 
-        /// <summary>
-        /// 执行 Rotate / To / Target 相关逻辑，并维护 Boss Actor 模块的运行时一致性。
-        /// </summary>
         private void RotateToTarget(float deltaTime)
         {
             Vector3 direction = DirectionToTarget();
@@ -2035,9 +2013,7 @@ namespace ProjectEVE.Boss.Actor
             transform.rotation = Quaternion.RotateTowards(transform.rotation, targetRotation, rotateSpeed * deltaTime);
         }
 
-        /// <summary>
-        /// 绑定 References 依赖引用，降低场景手动配置缺失导致的运行时错误。
-        /// </summary>
+
         private void BindReferences()
         {
             if (resourceComponent == null)

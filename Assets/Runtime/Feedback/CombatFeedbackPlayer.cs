@@ -389,9 +389,6 @@ namespace ProjectEVE.Feedback
             }
         }
 
-        /// <summary>
-        /// 执行 Play / Vfx 相关逻辑，并维护 战斗反馈 模块的运行时一致性。
-        /// </summary>
         private static void PlayVfx(ParticleSystem prefab, CombatFeedbackEvent feedbackEvent)
         {
             Vector3 direction = feedbackEvent.HitDirection.sqrMagnitude > 0.0001f

@@ -97,9 +97,7 @@ namespace ProjectEVE.Player.Movement
             BindReferences();
         }
 
-        /// <summary>
-        /// 执行 Clip / Horizontal / Delta 相关逻辑，并维护 玩家移动 模块的运行时一致性。
-        /// </summary>
+
         public Vector3 ClipHorizontalDelta(PlayerStateContext context, Vector3 requestedDelta)
         {
             LastClippedDelta = Vector3.zero;

@@ -30,9 +30,7 @@ namespace ProjectEVE.Player.Combat
             public int CastId;
             public string HitNodeId;
 
-            /// <summary>
-            /// 执行 Equals 相关逻辑，并维护 玩家战斗 模块的运行时一致性。
-            /// </summary>
+
             public bool Equals(SkillHitKey other)
             {
                 return ReferenceEquals(Hurtbox, other.Hurtbox) &&

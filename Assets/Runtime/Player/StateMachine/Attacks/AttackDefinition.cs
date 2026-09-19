@@ -27,9 +27,7 @@ namespace ProjectEVE.Player.Attacks
             Window = window;
         }
 
-        /// <summary>
-        /// 执行 Contains 相关逻辑，并维护 玩家状态机 模块的运行时一致性。
-        /// </summary>
+
         public bool Contains(float elapsedTime)
         {
             return Window.Contains(elapsedTime);

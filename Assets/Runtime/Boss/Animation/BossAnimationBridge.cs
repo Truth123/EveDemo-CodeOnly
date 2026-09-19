@@ -51,17 +51,11 @@ namespace ProjectEVE.Boss.Animation
 
         private int currentStateHash;
 
-        /// <summary>
-        /// 在对象唤醒时绑定依赖并初始化本组件的运行时缓存。
-        /// </summary>
         private void Awake()
         {
             BindReferences();
         }
 
-        /// <summary>
-        /// 在组件首次添加或手动重置时绑定默认引用，方便 Inspector 配置。
-        /// </summary>
         private void Reset()
         {
             BindReferences();
@@ -153,9 +147,6 @@ namespace ProjectEVE.Boss.Animation
             CrossFadeState(knockdownEndStateName, true);
         }
 
-        /// <summary>
-        /// 解析 Hit / State / Name 结果，并把多来源输入收敛为后续逻辑可直接消费的数据。
-        /// </summary>
         private string ResolveHitStateName(BossHitDirectionId direction)
         {
             switch (direction)
@@ -172,9 +163,7 @@ namespace ProjectEVE.Boss.Animation
             }
         }
 
-        /// <summary>
-        /// 执行 Cross / Fade / State 相关逻辑，并维护 Boss 动画 模块的运行时一致性。
-        /// </summary>
+
         private void CrossFadeState(string stateName, bool forceRestart = false)
         {
             if (animator == null || string.IsNullOrEmpty(stateName))
@@ -204,9 +193,6 @@ namespace ProjectEVE.Boss.Animation
             currentStateHash = stateHash;
         }
 
-        /// <summary>
-        /// 绑定 References 依赖引用，降低场景手动配置缺失导致的运行时错误。
-        /// </summary>
         private void BindReferences()
         {
             if (animator == null)

@@ -462,9 +462,7 @@ namespace ProjectEVE.Boss.Combat
             }
         }
 
-        /// <summary>
-        /// 执行 Rebuild / Hitbox / Anchors 相关逻辑，并维护 Boss 战斗 模块的运行时一致性。
-        /// </summary>
+
         private void RebuildHitboxAnchors()
         {
             hitboxAnchors.Clear();

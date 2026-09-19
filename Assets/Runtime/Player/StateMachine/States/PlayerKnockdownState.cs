@@ -18,16 +18,11 @@ namespace ProjectEVE.Player.States
         private bool missingConfig;
         private CombatTimelineReactionConfig currentConfig;
 
-        /// <summary>
-        /// 创建 PlayerKnockdownState 实例，并准备 玩家状态机 模块需要的初始状态。
-        /// </summary>
         public PlayerKnockdownState() : base(PlayerStateId.Knockdown)
         {
         }
 
-        /// <summary>
-        /// 执行 Enter 相关逻辑，并维护 玩家状态机 模块的运行时一致性。
-        /// </summary>
+
         public override void Enter(PlayerStateContext context)
         {
             context.ClearActionWindowsAndBuffers();
@@ -49,9 +44,6 @@ namespace ProjectEVE.Player.States
             }
         }
 
-        /// <summary>
-        /// 推进 Tick 时间线或状态逻辑，并返回或写入本帧产生的运行时结果。
-        /// </summary>
         public override PlayerStateId Tick(PlayerStateContext context, float deltaTime)
         {
             if (missingConfig)
@@ -72,9 +64,6 @@ namespace ProjectEVE.Player.States
             return context.StateElapsedTime >= config.TotalDuration ? ReturnToIdleOrLocomotion(context) : PlayerStateId.None;
         }
 
-        /// <summary>
-        /// 执行 Exit 相关逻辑，并维护 玩家状态机 模块的运行时一致性。
-        /// </summary>
         public override void Exit(PlayerStateContext context)
         {
             missingConfig = false;
@@ -104,9 +93,6 @@ namespace ProjectEVE.Player.States
                 snapshot.CanMoveCancel);
         }
 
-        /// <summary>
-        /// 缺少 Phase Clip 时按 Reaction 窗口保留旧表现阶段，避免动画桥接丢失阶段事实。
-        /// </summary>
         private static PlayerStatePhase ResolveFallbackPhase(CombatTimelineReactionConfig config, float elapsed)
         {
             if (elapsed < config.StunDuration)
@@ -127,9 +113,6 @@ namespace ProjectEVE.Player.States
             return PlayerStatePhase.Reset;
         }
 
-        /// <summary>
-        /// 写入 Knockdown 本帧窗口事实，供动画、调试和输入派生读取。
-        /// </summary>
         private static void ApplyFrame(PlayerStateContext context, KnockdownFrameData frame)
         {
             context.CurrentPhase = frame.Phase;
@@ -140,9 +123,7 @@ namespace ProjectEVE.Player.States
             context.IsMoveCancelWindow = frame.CanMoveCancel;
         }
 
-        /// <summary>
-        /// 尝试执行 Cancel / Window / Transition，返回是否成功，并避免在失败路径产生不必要的状态提交。
-        /// </summary>
+
         private static PlayerStateId TryCancelWindowTransition(PlayerStateContext context, KnockdownFrameData frame)
         {
             if (frame.CanCancelToEvade && PlayerActionInputRouter.TryConsumeEvade(context, true))

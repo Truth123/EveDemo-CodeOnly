@@ -14,9 +14,7 @@ namespace ProjectEVE.Combat.Timeline
 
         public float SkillCost => skillCost;
 
-        /// <summary>
-        /// 执行 Configure / Skill 相关逻辑，并维护 Combat Timeline 模块的运行时一致性。
-        /// </summary>
+
         public void ConfigureSkill(float nextSkillCost)
         {
             skillCost = Mathf.Max(0f, nextSkillCost);

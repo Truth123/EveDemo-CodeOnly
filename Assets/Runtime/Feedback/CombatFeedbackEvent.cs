@@ -62,9 +62,6 @@ namespace ProjectEVE.Feedback
             Target = target;
         }
 
-        /// <summary>
-        /// 执行 From / Hit 相关逻辑，并维护 战斗反馈 模块的运行时一致性。
-        /// </summary>
         public static CombatFeedbackEvent FromHit(
             in CombatHitData hit,
             in CombatHitResult result,

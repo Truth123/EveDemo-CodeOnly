@@ -35,25 +35,16 @@ namespace ProjectEVE.Player.States
         private float modeElapsed;
         private int consumedGuardReactionVersion;
 
-        /// <summary>
-        /// 创建 PlayerGuardState 实例，并准备 玩家状态机 模块需要的初始状态。
-        /// </summary>
         public PlayerGuardState() : base(PlayerStateId.Guard)
         {
         }
 
-        /// <summary>
-        /// 执行 Enter 相关逻辑，并维护 玩家状态机 模块的运行时一致性。
-        /// </summary>
         public override void Enter(PlayerStateContext context)
         {
             guardData = null;
             EnterStart(context, false);
         }
 
-        /// <summary>
-        /// 推进 Tick 时间线或状态逻辑，并返回或写入本帧产生的运行时结果。
-        /// </summary>
         public override PlayerStateId Tick(PlayerStateContext context, float deltaTime)
         {
             modeElapsed += deltaTime;
@@ -81,9 +72,7 @@ namespace ProjectEVE.Player.States
             return TickRelease(context);
         }
 
-        /// <summary>
-        /// 执行 Exit 相关逻辑，并维护 玩家状态机 模块的运行时一致性。
-        /// </summary>
+
         public override void Exit(PlayerStateContext context)
         {
             guardData = null;
@@ -93,9 +82,7 @@ namespace ProjectEVE.Player.States
             PlayerActionInputRouter.RefreshBufferedFlags(context);
         }
 
-        /// <summary>
-        /// 推进 Start 时间线或状态逻辑，并返回或写入本帧产生的运行时结果。
-        /// </summary>
+
         private PlayerStateId TickStart(PlayerStateContext context)
         {
             if (!TryGetGuardData(out PlayerGuardActionData data) ||
@@ -129,9 +116,6 @@ namespace ProjectEVE.Player.States
             return PlayerStateId.None;
         }
 
-        /// <summary>
-        /// 推进 Loop 时间线或状态逻辑，并返回或写入本帧产生的运行时结果。
-        /// </summary>
         private PlayerStateId TickLoop(PlayerStateContext context)
         {
             context.CurrentPhase = PlayerStatePhase.Loop;
@@ -153,9 +137,7 @@ namespace ProjectEVE.Player.States
             return PlayerStateId.None;
         }
 
-        /// <summary>
-        /// 推进 Reaction 时间线或状态逻辑，并返回或写入本帧产生的运行时结果。
-        /// </summary>
+
         private PlayerStateId TickReaction(PlayerStateContext context, float deltaTime)
         {
             bool hasDuration = mode == GuardMode.PerfectGuard
@@ -251,9 +233,6 @@ namespace ProjectEVE.Player.States
             return true;
         }
 
-        /// <summary>
-        /// 执行 Enter / Reaction 相关逻辑，并维护 玩家状态机 模块的运行时一致性。
-        /// </summary>
         private void EnterReaction(PlayerStateContext context)
         {
             consumedGuardReactionVersion = context.GuardReactionRequestVersion;
@@ -270,9 +249,6 @@ namespace ProjectEVE.Player.States
             context.ClearActionWindows();
         }
 
-        /// <summary>
-        /// 推进 Release 时间线或状态逻辑，并返回或写入本帧产生的运行时结果。
-        /// </summary>
         private PlayerStateId TickRelease(PlayerStateContext context)
         {
             if (!TryGetGuardData(out PlayerGuardActionData data) ||
@@ -326,9 +302,6 @@ namespace ProjectEVE.Player.States
             return modeElapsed >= releaseDuration ? ReturnToIdleOrLocomotion(context) : PlayerStateId.None;
         }
 
-        /// <summary>
-        /// 执行 Enter / Release 相关逻辑，并维护 玩家状态机 模块的运行时一致性。
-        /// </summary>
         private void EnterRelease(PlayerStateContext context)
         {
             mode = GuardMode.Release;
@@ -359,9 +332,6 @@ namespace ProjectEVE.Player.States
             PlayerActionInputRouter.CaptureSkillInput(context, release.CanBufferSkill, actionEndTime);
         }
 
-        /// <summary>
-        /// 执行 Enter / Start 相关逻辑，并维护 玩家状态机 模块的运行时一致性。
-        /// </summary>
         private void EnterStart(PlayerStateContext context, bool isReentry)
         {
             context.ClearActionWindowsAndBuffers();
@@ -375,9 +345,6 @@ namespace ProjectEVE.Player.States
             ClearGuardWalk(context);
         }
 
-        /// <summary>
-        /// 执行 Enter / Loop 相关逻辑，并维护 玩家状态机 模块的运行时一致性。
-        /// </summary>
         private void EnterLoop(PlayerStateContext context)
         {
             mode = GuardMode.Loop;
@@ -390,9 +357,6 @@ namespace ProjectEVE.Player.States
             UpdateGuardWalk(context);
         }
 
-        /// <summary>
-        /// 推进 Perfect / Guard / Chain / Window 时间线或状态逻辑，并返回或写入本帧产生的运行时结果。
-        /// </summary>
         private void TickPerfectGuardChainWindow(PlayerStateContext context, float deltaTime)
         {
             if (mode != GuardMode.PerfectGuard || !TryGetGuardData(out PlayerGuardActionData data))
@@ -585,9 +549,7 @@ namespace ProjectEVE.Player.States
             context.LastGuardMoveDirection = direction;
         }
 
-        /// <summary>
-        /// 解析 Guard / Move / Direction 结果，并把多来源输入收敛为后续逻辑可直接消费的数据。
-        /// </summary>
+
         private static PlayerGuardMoveDirectionId ResolveGuardMoveDirection(Vector2 move)
         {
             if (move.sqrMagnitude <= 0.0001f)
@@ -640,9 +602,6 @@ namespace ProjectEVE.Player.States
             public bool ChainInput { get; }
         }
 
-        /// <summary>
-        /// 清理 Guard / Walk 相关运行时状态，防止旧动作、旧窗口或旧命中结果泄漏到后续流程。
-        /// </summary>
         private static void ClearGuardWalk(PlayerStateContext context)
         {
             context.IsGuardWalking = false;

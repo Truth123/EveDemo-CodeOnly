@@ -75,9 +75,6 @@ namespace ProjectEVE.Boss.Movement
             BindReferences();
         }
 
-        /// <summary>
-        /// 在 Inspector 数据变更时钳制参数并刷新编辑期引用，避免运行时获得非法配置。
-        /// </summary>
         private void OnValidate()
         {
             defaultControllerHeight = Mathf.Max(0.5f, defaultControllerHeight);

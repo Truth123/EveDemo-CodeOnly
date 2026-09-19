@@ -172,9 +172,7 @@ namespace ProjectEVE.Player.Animation
             CrossFadeCombatReactionIfNeeded(context);
         }
 
-        /// <summary>
-        /// 执行 Cache / Parameters 相关逻辑，并维护 玩家动画 模块的运行时一致性。
-        /// </summary>
+
         private void CacheParameters()
         {
             parameterHashes.Clear();

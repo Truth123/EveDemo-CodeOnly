@@ -230,9 +230,6 @@ namespace ProjectEVE.Combat.Timeline
             return false;
         }
 
-        /// <summary>
-        /// 执行 Enumerate / Boss / Attacks 相关逻辑，并维护 Combat Timeline 模块的运行时一致性。
-        /// </summary>
         public static IEnumerable<BossAttackDefinition> EnumerateBossAttacks()
         {
             EnsureInitialized();

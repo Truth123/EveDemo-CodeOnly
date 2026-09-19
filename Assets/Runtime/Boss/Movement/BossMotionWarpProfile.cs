@@ -112,9 +112,7 @@ namespace ProjectEVE.Boss.Movement
         public BossRootMotionSuppressWindow[] RootMotionSuppressWindows;
         public BossCodeMoveWindow[] CodeMoveWindows;
 
-        /// <summary>
-        /// 执行 Boss / Attack / Motion / Config 相关逻辑，并维护 Boss 位移 模块的运行时一致性。
-        /// </summary>
+
         public BossAttackMotionConfig(
             string attackId,
             BossAttackMotionMode motionMode,

@@ -19,9 +19,6 @@ namespace ProjectEVE.Player.Windows
         /// <summary>窗口结束时间，相对于当前状态或动作节点的进入时间。</summary>
         public float EndTime;
 
-        /// <summary>
-        /// 创建一个动作时间窗。
-        /// </summary>
         public ActionWindow(string name, float startTime, float endTime)
         {
             Name = name;
@@ -29,9 +26,6 @@ namespace ProjectEVE.Player.Windows
             EndTime = endTime;
         }
 
-        /// <summary>
-        /// 执行 Disabled 相关逻辑，并维护 玩家状态机 模块的运行时一致性。
-        /// </summary>
         public static ActionWindow Disabled(string name)
         {
             return new ActionWindow(name, float.PositiveInfinity, float.NegativeInfinity);

@@ -13,9 +13,7 @@ namespace ProjectEVE.Feedback
     {
         public static event Action<CombatFeedbackEvent> FeedbackRequested;
 
-        /// <summary>
-        /// 执行 Raise 相关逻辑，并维护 战斗反馈 模块的运行时一致性。
-        /// </summary>
+
         public static void Raise(in CombatFeedbackEvent feedbackEvent)
         {
             if (feedbackEvent.Kind == CombatFeedbackKind.None)

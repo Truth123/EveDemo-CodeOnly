@@ -67,9 +67,7 @@ namespace ProjectEVE.EditorTools
             Debug.Log("Eve PerfectEvade Animator setup applied.");
         }
 
-        /// <summary>
-        /// 执行 Needs / Setup 相关逻辑，并维护 Animator 编辑器工具 模块的运行时一致性。
-        /// </summary>
+
         private static bool NeedsSetup(AnimatorController controller)
         {
             if (!HasParameter(controller, IsPerfectEvadeActiveParameter) ||
@@ -90,9 +88,7 @@ namespace ProjectEVE.EditorTools
                 PerfectEvadeStateNeedsSetup(stateMachine, "Anim_PerfectEvade_R");
         }
 
-        /// <summary>
-        /// 添加 Parameter / If / Missing 数据，并维护集合、缓存或运行时状态的一致性。
-        /// </summary>
+
         private static void AddParameterIfMissing(
             AnimatorController controller,
             string parameterName,
@@ -104,9 +100,7 @@ namespace ProjectEVE.EditorTools
             }
         }
 
-        /// <summary>
-        /// 判断当前对象是否满足 Parameter 条件，供状态机、调试或校验逻辑读取。
-        /// </summary>
+
         private static bool HasParameter(AnimatorController controller, string parameterName)
         {
             foreach (AnimatorControllerParameter parameter in controller.parameters)
@@ -120,9 +114,7 @@ namespace ProjectEVE.EditorTools
             return false;
         }
 
-        /// <summary>
-        /// 执行 Configure / Ordinary / Evade / Entries 相关逻辑，并维护 Animator 编辑器工具 模块的运行时一致性。
-        /// </summary>
+
         private static void ConfigureOrdinaryEvadeEntries(AnimatorStateMachine stateMachine)
         {
             foreach (AnimatorStateTransition transition in stateMachine.anyStateTransitions)
@@ -148,9 +140,7 @@ namespace ProjectEVE.EditorTools
             }
         }
 
-        /// <summary>
-        /// 执行 Ordinary / Evade / Entries / Need / Setup 相关逻辑，并维护 Animator 编辑器工具 模块的运行时一致性。
-        /// </summary>
+
         private static bool OrdinaryEvadeEntriesNeedSetup(AnimatorStateMachine stateMachine)
         {
             foreach (AnimatorStateTransition transition in stateMachine.anyStateTransitions)
@@ -173,9 +163,7 @@ namespace ProjectEVE.EditorTools
             return false;
         }
 
-        /// <summary>
-        /// 执行 Configure / Perfect / Evade / State 相关逻辑，并维护 Animator 编辑器工具 模块的运行时一致性。
-        /// </summary>
+
         private static void ConfigurePerfectEvadeState(
             AnimatorStateMachine stateMachine,
             AnimatorState returnState,
@@ -199,9 +187,7 @@ namespace ProjectEVE.EditorTools
             }
         }
 
-        /// <summary>
-        /// 执行 Perfect / Evade / State / Needs / Setup 相关逻辑，并维护 Animator 编辑器工具 模块的运行时一致性。
-        /// </summary>
+
         private static bool PerfectEvadeStateNeedsSetup(AnimatorStateMachine stateMachine, string stateName)
         {
             AnimatorState targetState = FindState(stateMachine, stateName);
@@ -213,9 +199,7 @@ namespace ProjectEVE.EditorTools
             return HasPerfectEvadeAnyStateTransition(stateMachine, targetState);
         }
 
-        /// <summary>
-        /// 查找 State 对象或数据，作为后续绑定、校验或显示的输入。
-        /// </summary>
+
         private static AnimatorState FindState(AnimatorStateMachine stateMachine, string stateName)
         {
             foreach (ChildAnimatorState childState in stateMachine.states)
@@ -238,9 +222,7 @@ namespace ProjectEVE.EditorTools
             return null;
         }
 
-        /// <summary>
-        /// 判断当前对象是否满足 Perfect / Evade / Any / State / Transition 条件，供状态机、调试或校验逻辑读取。
-        /// </summary>
+
         private static bool HasPerfectEvadeAnyStateTransition(
             AnimatorStateMachine stateMachine,
             AnimatorState targetState)
@@ -258,9 +240,6 @@ namespace ProjectEVE.EditorTools
             return false;
         }
 
-        /// <summary>
-        /// 移除 Perfect / Evade / Any / State / Transitions 数据，并清理相关缓存或状态引用。
-        /// </summary>
         private static void RemovePerfectEvadeAnyStateTransitions(
             AnimatorStateMachine stateMachine,
             AnimatorState targetState)
@@ -277,9 +256,7 @@ namespace ProjectEVE.EditorTools
             }
         }
 
-        /// <summary>
-        /// 判断当前对象是否满足 Transition / To 条件，供状态机、调试或校验逻辑读取。
-        /// </summary>
+
         private static bool HasTransitionTo(AnimatorState fromState, AnimatorState toState)
         {
             foreach (AnimatorStateTransition transition in fromState.transitions)
@@ -293,9 +270,7 @@ namespace ProjectEVE.EditorTools
             return false;
         }
 
-        /// <summary>
-        /// 添加 Condition / If / Missing 数据，并维护集合、缓存或运行时状态的一致性。
-        /// </summary>
+
         private static void AddConditionIfMissing(
             AnimatorStateTransition transition,
             AnimatorConditionMode mode,
@@ -310,9 +285,7 @@ namespace ProjectEVE.EditorTools
             transition.AddCondition(mode, threshold, parameterName);
         }
 
-        /// <summary>
-        /// 判断当前对象是否满足 Condition 条件，供状态机、调试或校验逻辑读取。
-        /// </summary>
+
         private static bool HasCondition(AnimatorStateTransition transition, string parameterName)
         {
             foreach (AnimatorCondition condition in transition.conditions)

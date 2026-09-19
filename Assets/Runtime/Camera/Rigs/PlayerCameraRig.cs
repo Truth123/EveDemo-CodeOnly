@@ -419,9 +419,7 @@ namespace ProjectEVE.CameraSystem.Rigs
             return smoothedPivot;
         }
 
-        /// <summary>
-        /// 执行 Log / Focus / Debug 相关逻辑，并维护 战斗相机 模块的运行时一致性。
-        /// </summary>
+
         [System.Diagnostics.Conditional("UNITY_EDITOR")]
         private void LogFocusDebug(float rawSpeed, float pivotLag, bool fastFollow)
         {

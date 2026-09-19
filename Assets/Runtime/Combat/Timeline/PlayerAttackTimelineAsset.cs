@@ -27,9 +27,7 @@ namespace ProjectEVE.Combat.Timeline
         public float Damage => damage;
         public float PoiseDamage => poiseDamage;
 
-        /// <summary>
-        /// 执行 Configure / Attack 相关逻辑，并维护 Combat Timeline 模块的运行时一致性。
-        /// </summary>
+
         public void ConfigureAttack(
             AttackInputType inputType,
             int nextComboIndex,

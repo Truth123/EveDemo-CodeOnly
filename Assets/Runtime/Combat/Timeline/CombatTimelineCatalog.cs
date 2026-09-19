@@ -18,9 +18,7 @@ namespace ProjectEVE.Combat.Timeline
         public CombatTimelineOwner Owner => owner;
         public CombatTimelineActionAsset[] Timelines => timelines;
 
-        /// <summary>
-        /// 执行 Configure 相关逻辑，并维护 Combat Timeline 模块的运行时一致性。
-        /// </summary>
+
         public void Configure(string nextCatalogId, CombatTimelineOwner nextOwner, CombatTimelineActionAsset[] nextTimelines)
         {
             catalogId = nextCatalogId;

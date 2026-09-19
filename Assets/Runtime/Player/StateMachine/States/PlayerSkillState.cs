@@ -23,18 +23,11 @@ namespace ProjectEVE.Player.States
         private PlayerActionMotionId activeMotionWindowId;
         private readonly PlayerSkillEffectController skillEffectController;
 
-        /// <summary>
-        /// 创建 PlayerSkillState 实例，并准备 玩家状态机 模块需要的初始状态。
-        /// </summary>
-        /// <param name="skillEffectController">场景内 SkillEffect 粒子控制器；为空时只跳过表现，不影响 Skill 玩法。</param>
         public PlayerSkillState(PlayerSkillEffectController skillEffectController = null) : base(PlayerStateId.Skill)
         {
             this.skillEffectController = skillEffectController;
         }
 
-        /// <summary>
-        /// 执行 Enter 相关逻辑，并维护 玩家状态机 模块的运行时一致性。
-        /// </summary>
         public override void Enter(PlayerStateContext context)
         {
             currentSkill = null;
@@ -55,9 +48,6 @@ namespace ProjectEVE.Player.States
             }
         }
 
-        /// <summary>
-        /// 推进 Tick 时间线或状态逻辑，并返回或写入本帧产生的运行时结果。
-        /// </summary>
         public override PlayerStateId Tick(PlayerStateContext context, float deltaTime)
         {
             _ = deltaTime;
@@ -83,9 +73,6 @@ namespace ProjectEVE.Player.States
                 : PlayerStateId.None;
         }
 
-        /// <summary>
-        /// 执行 Exit 相关逻辑，并维护 玩家状态机 模块的运行时一致性。
-        /// </summary>
         public override void Exit(PlayerStateContext context)
         {
             skillEffectController?.StopAll();
@@ -180,9 +167,6 @@ namespace ProjectEVE.Player.States
             ApplyFrameData(context, frame);
         }
 
-        /// <summary>
-        /// 根据 Skill Timeline 输入缓存窗口记录本帧输入。
-        /// </summary>
         private void RecordBufferedInputs(PlayerStateContext context, SkillFrameData frame)
         {
             float actionEndTime = skillStartTime + currentSkill.TotalDuration;
@@ -191,9 +175,6 @@ namespace ProjectEVE.Player.States
             PlayerActionInputRouter.CaptureSkillInput(context, frame.CanBufferSkill, actionEndTime);
         }
 
-        /// <summary>
-        /// 消费 Skill 的取消、重开和派生输入。
-        /// </summary>
         private PlayerStateId TryConsumeCancelOrRestart(PlayerStateContext context, SkillFrameData frame)
         {
             if (frame.CanCancelToEvade && PlayerActionInputRouter.TryConsumeEvade(context, true))
@@ -271,9 +252,6 @@ namespace ProjectEVE.Player.States
                 activePlayerMotionId);
         }
 
-        /// <summary>
-        /// 将 SkillFrameData 写回 PlayerStateContext，供 Hitbox、Receiver、Debug 和状态切换使用。
-        /// </summary>
         private static void ApplyFrameData(PlayerStateContext context, SkillFrameData skill)
         {
             context.CurrentPhase = skill.Phase;
@@ -287,9 +265,6 @@ namespace ProjectEVE.Player.States
             ApplyActiveHitNode(context, skill);
         }
 
-        /// <summary>
-        /// 将当前激活的 Skill HitNode 写入上下文；无激活节点时清理旧节点数据。
-        /// </summary>
         private static void ApplyActiveHitNode(PlayerStateContext context, SkillFrameData skill)
         {
             if (skill.HasActiveHitNode)

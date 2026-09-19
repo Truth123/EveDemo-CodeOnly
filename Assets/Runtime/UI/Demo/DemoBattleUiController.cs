@@ -144,9 +144,6 @@ namespace ProjectEVE.UI.Demo
             startCombatAfterReload = false;
         }
 
-        /// <summary>
-        /// 在对象唤醒时绑定依赖并初始化本组件的运行时缓存。
-        /// </summary>
         private void Awake()
         {
             restoreFixedDeltaTime = Time.fixedDeltaTime;
@@ -169,9 +166,6 @@ namespace ProjectEVE.UI.Demo
             }
         }
 
-        /// <summary>
-        /// 按帧推进运行时逻辑，并刷新依赖的状态、输入或显示数据。
-        /// </summary>
         private void Update()
         {
             BindReferences();
@@ -181,17 +175,11 @@ namespace ProjectEVE.UI.Demo
             RefreshHud();
         }
 
-        /// <summary>
-        /// 在骨骼动画完成本帧更新后，根据正式锁定上下文切换 Bip001 子节点上的世界空间柔光点。
-        /// </summary>
         private void LateUpdate()
         {
             UpdateLockOnIndicator();
         }
 
-        /// <summary>
-        /// 在组件禁用时注销事件、清理临时状态并避免悬挂引用。
-        /// </summary>
         private void OnDisable()
         {
             StopAllCoroutines();
@@ -912,9 +900,6 @@ namespace ProjectEVE.UI.Demo
             }
         }
 
-        /// <summary>
-        /// 执行 Restart / Scene 相关逻辑，并维护 战斗 UI 模块的运行时一致性。
-        /// </summary>
         private void RestartScene()
         {
             ReloadDemo(false);
@@ -1437,9 +1422,6 @@ namespace ProjectEVE.UI.Demo
                 new Vector2(-32f, -24f));
         }
 
-        /// <summary>
-        /// 构建 Pause / Menu 数据结构，供运行时、编辑器或调试显示使用。
-        /// </summary>
         private void BuildPauseMenu(RectTransform parent)
         {
             Image dim = CreateImage(parent, "Dim", null, new Color(0f, 0f, 0f, 0.58f));
@@ -1456,9 +1438,6 @@ namespace ProjectEVE.UI.Demo
             CreateMenuButton(panel, "QuitButton", "退出游戏", new Vector2(0f, -226f), QuitGame);
         }
 
-        /// <summary>
-        /// 创建 Menu / Button 实例或数据，作为后续运行时流程的唯一标识或配置来源。
-        /// </summary>
         private Text CreateMenuButton(RectTransform parent, string name, string label, Vector2 anchoredPosition, UnityEngine.Events.UnityAction action)
         {
             RectTransform buttonRect = CreatePanel(parent, name, new Color(0.06f, 0.08f, 0.1f, 0.86f));
@@ -1532,9 +1511,6 @@ namespace ProjectEVE.UI.Demo
             return button;
         }
 
-        /// <summary>
-        /// 创建 Segmented / Bar 实例或数据，作为后续运行时流程的唯一标识或配置来源。
-        /// </summary>
         private SegmentedBarView CreateSegmentedBar(RectTransform parent, string name, int count, int groupSize, Vector2 size, Color filled, Color empty, Text valueText)
         {
             GameObject barObject = new GameObject(name, typeof(RectTransform));
@@ -1544,9 +1520,6 @@ namespace ProjectEVE.UI.Demo
             return bar;
         }
 
-        /// <summary>
-        /// 创建 Group 实例或数据，作为后续运行时流程的唯一标识或配置来源。
-        /// </summary>
         private CanvasGroup CreateGroup(RectTransform parent, string name)
         {
             RectTransform rectTransform = CreatePanel(parent, name, new Color(0f, 0f, 0f, 0f));
@@ -1554,9 +1527,6 @@ namespace ProjectEVE.UI.Demo
             return rectTransform.gameObject.AddComponent<CanvasGroup>();
         }
 
-        /// <summary>
-        /// 创建 Panel 实例或数据，作为后续运行时流程的唯一标识或配置来源。
-        /// </summary>
         private RectTransform CreatePanel(RectTransform parent, string name, Color color)
         {
             GameObject panelObject = new GameObject(name, typeof(RectTransform), typeof(Image));
@@ -1566,9 +1536,6 @@ namespace ProjectEVE.UI.Demo
             return (RectTransform)panelObject.transform;
         }
 
-        /// <summary>
-        /// 创建 Image 实例或数据，作为后续运行时流程的唯一标识或配置来源。
-        /// </summary>
         private Image CreateImage(RectTransform parent, string name, Sprite sprite, Color color)
         {
             GameObject imageObject = new GameObject(name, typeof(RectTransform), typeof(Image));
@@ -1631,9 +1598,6 @@ namespace ProjectEVE.UI.Demo
             }
         }
 
-        /// <summary>
-        /// 创建 Text 实例或数据，作为后续运行时流程的唯一标识或配置来源。
-        /// </summary>
         private Text CreateText(RectTransform parent, string name, string text, int fontSize, Color color, TextAnchor alignment)
         {
             GameObject textObject = new GameObject(name, typeof(RectTransform), typeof(Text));
@@ -1648,9 +1612,6 @@ namespace ProjectEVE.UI.Demo
             return uiText;
         }
 
-        /// <summary>
-        /// 绑定 References 依赖引用，降低场景手动配置缺失导致的运行时错误。
-        /// </summary>
         private void BindReferences()
         {
             if (playerStateMachine == null)
@@ -1715,9 +1676,7 @@ namespace ProjectEVE.UI.Demo
             }
         }
 
-        /// <summary>
-        /// 设置 Group / Visible 数据，并同步必要的运行时缓存或调试状态。
-        /// </summary>
+  
         private static void SetGroupVisible(CanvasGroup group, bool visible)
         {
             if (group == null)
@@ -1730,9 +1689,7 @@ namespace ProjectEVE.UI.Demo
             group.blocksRaycasts = visible;
         }
 
-        /// <summary>
-        /// 执行 Anchor 相关逻辑，并维护 战斗 UI 模块的运行时一致性。
-        /// </summary>
+
         private static void Anchor(RectTransform rectTransform, Vector2 anchorMin, Vector2 anchorMax, Vector2 pivot, Vector2 anchoredPosition, Vector2 sizeDelta)
         {
             rectTransform.anchorMin = anchorMin;
@@ -1742,9 +1699,7 @@ namespace ProjectEVE.UI.Demo
             rectTransform.sizeDelta = sizeDelta;
         }
 
-        /// <summary>
-        /// 执行 Stretch / To / Parent 相关逻辑，并维护 战斗 UI 模块的运行时一致性。
-        /// </summary>
+
         private static void StretchToParent(RectTransform rectTransform)
         {
             rectTransform.anchorMin = Vector2.zero;
@@ -1754,9 +1709,7 @@ namespace ProjectEVE.UI.Demo
             rectTransform.sizeDelta = Vector2.zero;
         }
 
-        /// <summary>
-        /// 确保 Event / System 可用，不满足时创建、刷新或钳制必要的运行时数据。
-        /// </summary>
+
         private static void EnsureEventSystem()
         {
             if (FindFirstObjectByType<EventSystem>() != null)
@@ -1772,18 +1725,13 @@ namespace ProjectEVE.UI.Demo
             DontDestroyOnLoad(eventSystem);
         }
 
-        /// <summary>
-        /// 解析 Font 结果，并把多来源输入收敛为后续逻辑可直接消费的数据。
-        /// </summary>
+
         private static Font ResolveFont()
         {
             Font font = Resources.GetBuiltinResource<Font>("LegacyRuntime.ttf");
             return font != null ? font : Resources.GetBuiltinResource<Font>("Arial.ttf");
         }
 
-        /// <summary>
-        /// 执行 Was / Pressed / Escape 相关逻辑，并维护 战斗 UI 模块的运行时一致性。
-        /// </summary>
         private static bool WasPressedEscape()
         {
 #if ENABLE_INPUT_SYSTEM

@@ -141,9 +141,7 @@ namespace ProjectEVE.Core.Debugging
             }
         }
 
-        /// <summary>
-        /// 执行 Format / Text 相关逻辑，并维护 调试显示 模块的运行时一致性。
-        /// </summary>
+
         private static string FormatText(string value)
         {
             return string.IsNullOrEmpty(value) ? "-" : value;

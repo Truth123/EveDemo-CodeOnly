@@ -22,16 +22,12 @@ namespace ProjectEVE.Player.States
         private EvadeModeId currentDataMode;
         private bool failedToStart;
 
-        /// <summary>
-        /// 创建 PlayerEvadeState 实例，并准备 玩家状态机 模块需要的初始状态。
-        /// </summary>
+
         public PlayerEvadeState() : base(PlayerStateId.Evade)
         {
         }
 
-        /// <summary>
-        /// 执行 Enter 相关逻辑，并维护 玩家状态机 模块的运行时一致性。
-        /// </summary>
+
         public override void Enter(PlayerStateContext context)
         {
             context.ClearActionWindowsAndBuffers();
@@ -46,9 +42,7 @@ namespace ProjectEVE.Player.States
             context.RequestActionMotion(ResolveEvadeMotionId(context.ActionMove));
         }
 
-        /// <summary>
-        /// 推进 Tick 时间线或状态逻辑，并返回或写入本帧产生的运行时结果。
-        /// </summary>
+
         public override PlayerStateId Tick(PlayerStateContext context, float deltaTime)
         {
             if (failedToStart)
@@ -91,9 +85,7 @@ namespace ProjectEVE.Player.States
             return elapsed >= evade.Duration ? ReturnToIdleOrLocomotion(context) : PlayerStateId.None;
         }
 
-        /// <summary>
-        /// 执行 Exit 相关逻辑，并维护 玩家状态机 模块的运行时一致性。
-        /// </summary>
+
         public override void Exit(PlayerStateContext context)
         {
             currentEvade = null;

@@ -28,9 +28,7 @@ namespace ProjectEVE.Boss.Movement
         public float ScaleFactor { get; private set; } = 1f;
         public bool HasValidAuthoredTotal => authoredTotalWorld.sqrMagnitude > Epsilon;
 
-        /// <summary>
-        /// 执行 Matches 相关逻辑，并维护 Boss 位移 模块的运行时一致性。
-        /// </summary>
+
         public bool Matches(BossMotionWarpWindow window)
         {
             return IsActive && window != null && windowName == window.Name;

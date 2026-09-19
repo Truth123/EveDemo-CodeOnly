@@ -43,10 +43,6 @@ namespace ProjectEVE.Editor.CombatTimeline
             public CombatTimelineClip Clip;
             public CombatTimelineTrack Track;
             public Rect Rect;
-
-            /// <summary>
-            /// 执行 Clip / Draw / Layout 相关逻辑，并维护 Combat Timeline 编辑器 模块的运行时一致性。
-            /// </summary>
             public ClipDrawLayout(CombatTimelineClip clip, CombatTimelineTrack track, Rect rect)
             {
                 Clip = clip;
@@ -89,9 +85,7 @@ namespace ProjectEVE.Editor.CombatTimeline
         private float dragOriginalClipStartOffset;
         private float dragOriginalClipEndOffset;
 
-        /// <summary>
-        /// 执行 Open 相关逻辑，并维护 Combat Timeline 编辑器 模块的运行时一致性。
-        /// </summary>
+
         [MenuItem("Project EVE/Combat/Combat Timeline Editor")]
         public static void Open()
         {
@@ -100,18 +94,14 @@ namespace ProjectEVE.Editor.CombatTimeline
             window.RefreshTimelines();
         }
 
-        /// <summary>
-        /// 在组件启用时注册事件、恢复运行时状态或刷新显示。
-        /// </summary>
+
         private void OnEnable()
         {
             RefreshTimelines();
             EditorApplication.update += UpdateRuntimePlayheadFollow;
         }
 
-        /// <summary>
-        /// 在组件禁用时注销事件、清理临时状态并避免悬挂引用。
-        /// </summary>
+
         private void OnDisable()
         {
             EditorApplication.update -= UpdateRuntimePlayheadFollow;
@@ -147,9 +137,6 @@ namespace ProjectEVE.Editor.CombatTimeline
             }
         }
 
-        /// <summary>
-        /// 绘制 IMGUI 调试或演示界面，并读取当前运行时快照。
-        /// </summary>
         private void OnGUI()
         {
             const float toolbarHeight = 24f;
@@ -187,9 +174,6 @@ namespace ProjectEVE.Editor.CombatTimeline
             }
         }
 
-        /// <summary>
-        /// 绘制 Toolbar 调试或编辑器界面，不改变核心战斗运行时语义。
-        /// </summary>
         private void DrawToolbar(Rect toolbar)
         {
             GUILayout.BeginArea(toolbar, EditorStyles.toolbar);
@@ -265,9 +249,7 @@ namespace ProjectEVE.Editor.CombatTimeline
             GUILayout.EndArea();
         }
 
-        /// <summary>
-        /// 绘制 Frame / Rate / Toolbar / Field 调试或编辑器界面，不改变核心战斗运行时语义。
-        /// </summary>
+
         private void DrawFrameRateToolbarField()
         {
             if (selectedTimeline == null)
@@ -300,9 +282,6 @@ namespace ProjectEVE.Editor.CombatTimeline
             }
         }
 
-        /// <summary>
-        /// 执行 Time / Toolbar / Field 相关逻辑，并维护 Combat Timeline 编辑器 模块的运行时一致性。
-        /// </summary>
         private float TimeToolbarField(float value)
         {
             if (selectedTimeline == null)
@@ -368,9 +347,6 @@ namespace ProjectEVE.Editor.CombatTimeline
             }
         }
 
-        /// <summary>
-        /// 设置 Playhead / From / Mouse 数据，并同步必要的运行时缓存或调试状态。
-        /// </summary>
         private void SetPlayheadFromMouse(Rect area, float mouseX)
         {
             Rect ruler = GetRulerRect(area);
@@ -478,13 +454,6 @@ namespace ProjectEVE.Editor.CombatTimeline
             return false;
         }
 
-
-
-
-
-        /// <summary>
-        /// 绘制 Action / List 调试或编辑器界面，不改变核心战斗运行时语义。
-        /// </summary>
         private void DrawActionList()
         {
             EditorGUILayout.LabelField("Actions", EditorStyles.boldLabel);
@@ -516,9 +485,6 @@ namespace ProjectEVE.Editor.CombatTimeline
             EditorGUILayout.EndScrollView();
         }
 
-        /// <summary>
-        /// 绘制 Timeline 调试或编辑器界面，不改变核心战斗运行时语义。
-        /// </summary>
         private void DrawTimeline()
         {
             if (selectedTimeline == null)
@@ -546,9 +512,6 @@ namespace ProjectEVE.Editor.CombatTimeline
             HandleTimelineKeys();
         }
 
-        /// <summary>
-        /// 绘制 Time / Ruler 调试或编辑器界面，不改变核心战斗运行时语义。
-        /// </summary>
         private void DrawTimeRuler(Rect area)
         {
             Rect ruler = GetRulerRect(area);
@@ -598,9 +561,6 @@ namespace ProjectEVE.Editor.CombatTimeline
             }
         }
 
-        /// <summary>
-        /// 绘制 Tracks 调试或编辑器界面，不改变核心战斗运行时语义。
-        /// </summary>
         private void DrawTracks(Rect area)
         {
             CombatTimelineTrack[] tracks = selectedTimeline.Tracks ?? Array.Empty<CombatTimelineTrack>();
@@ -636,9 +596,6 @@ namespace ProjectEVE.Editor.CombatTimeline
             }
         }
 
-        /// <summary>
-        /// 绘制 Track / Label 调试或编辑器界面，不改变核心战斗运行时语义。
-        /// </summary>
         private void DrawTrackLabel(CombatTimelineTrack track, Rect labelRect, string label)
         {
             Rect textRect = new Rect(labelRect.x, labelRect.y, Mathf.Max(0f, labelRect.width - 24f), labelRect.height);
@@ -655,10 +612,6 @@ namespace ProjectEVE.Editor.CombatTimeline
                 ShowAddClipMenu(track);
             }
         }
-
-        /// <summary>
-        /// 执行 Show / Add / Clip / Menu 相关逻辑，并维护 Combat Timeline 编辑器 模块的运行时一致性。
-        /// </summary>
         private void ShowAddClipMenu(CombatTimelineTrack track)
         {
             GenericMenu menu = new GenericMenu();
@@ -753,10 +706,6 @@ namespace ProjectEVE.Editor.CombatTimeline
         {
             menu.AddItem(new GUIContent(label), false, () => AddClipToTrack(track, CreateDefaultClip<TClip>(label, capabilityId)));
         }
-
-        /// <summary>
-        /// 添加 Motion / Clip / Menu / Item 数据，并维护集合、缓存或运行时状态的一致性。
-        /// </summary>
         private void AddMotionClipMenuItem(GenericMenu menu, CombatTimelineTrack track, string label, CombatTimelineClipKind motionKind)
         {
             menu.AddItem(new GUIContent(label), false, () =>
@@ -786,9 +735,6 @@ namespace ProjectEVE.Editor.CombatTimeline
             });
         }
 
-        /// <summary>
-        /// 添加 Animation / Clip / Menu / Item 数据，并维护集合、缓存或运行时状态的一致性。
-        /// </summary>
         private void AddAnimationClipMenuItem(GenericMenu menu, CombatTimelineTrack track)
         {
             menu.AddItem(new GUIContent("Animation Preview"), false, () =>
@@ -815,9 +761,6 @@ namespace ProjectEVE.Editor.CombatTimeline
             };
         }
 
-        /// <summary>
-        /// 添加 Clip / To / Track 数据，并维护集合、缓存或运行时状态的一致性。
-        /// </summary>
         private void AddClipToTrack(CombatTimelineTrack track, CombatTimelineClip clip)
         {
             if (track == null || clip == null || selectedTimeline == null)
@@ -831,9 +774,7 @@ namespace ProjectEVE.Editor.CombatTimeline
             selectedClip = clip;
             MarkTimelineChanged();
         }
-        /// <summary>
-        /// 获取 Timeline / Visual / End / Time 数据，作为运行时逻辑、调试显示或编辑器界面的只读输入。
-        /// </summary>
+
         private float GetTimelineVisualEndTime(CombatTimelineTrack[] tracks)
         {
             float endTime = selectedTimeline != null ? selectedTimeline.TotalDuration : 0f;
@@ -861,9 +802,7 @@ namespace ProjectEVE.Editor.CombatTimeline
 
             return Mathf.Max(0.1f, endTime);
         }
-        /// <summary>
-        /// 执行 Calculate / Timeline / Height 相关逻辑，并维护 Combat Timeline 编辑器 模块的运行时一致性。
-        /// </summary>
+
         private float CalculateTimelineHeight(CombatTimelineTrack[] tracks)
         {
             float height = 0f;
@@ -875,17 +814,11 @@ namespace ProjectEVE.Editor.CombatTimeline
             return height;
         }
 
-        /// <summary>
-        /// 执行 Calculate / Track / Height 相关逻辑，并维护 Combat Timeline 编辑器 模块的运行时一致性。
-        /// </summary>
         private static float CalculateTrackHeight(int laneCount)
         {
             return TrackBasePadding + Mathf.Max(1, laneCount) * TrackLaneHeight;
         }
 
-        /// <summary>
-        /// 执行 Calculate / Track / Lane / Count 相关逻辑，并维护 Combat Timeline 编辑器 模块的运行时一致性。
-        /// </summary>
         private int CalculateTrackLaneCount(CombatTimelineTrack track)
         {
             if (track?.Clips == null || track.Clips.Length == 0)
@@ -912,9 +845,6 @@ namespace ProjectEVE.Editor.CombatTimeline
             return Mathf.Max(1, laneEnds.Count);
         }
 
-        /// <summary>
-        /// 构建 Clip / Draw / Layouts 数据结构，供运行时、编辑器或调试显示使用。
-        /// </summary>
         private List<ClipDrawLayout> BuildClipDrawLayouts(CombatTimelineTrack track, CombatTimelineClip[] clips, Rect trackRect)
         {
             List<ClipDrawLayout> layouts = new List<ClipDrawLayout>();
@@ -946,9 +876,6 @@ namespace ProjectEVE.Editor.CombatTimeline
             return layouts;
         }
 
-        /// <summary>
-        /// 执行 Sorted / Non / Null / Clips 相关逻辑，并维护 Combat Timeline 编辑器 模块的运行时一致性。
-        /// </summary>
         private static List<CombatTimelineClip> SortedNonNullClips(CombatTimelineClip[] clips)
         {
             List<CombatTimelineClip> sorted = new List<CombatTimelineClip>();
@@ -994,16 +921,6 @@ namespace ProjectEVE.Editor.CombatTimeline
 
             return -1;
         }
-
-
-
-
-
-
-
-        /// <summary>
-        /// 绘制 Clip 调试或编辑器界面，不改变核心战斗运行时语义。
-        /// </summary>
         private void DrawClip(CombatTimelineClip clip, Rect rect)
         {
             if (clip == null)
@@ -1027,9 +944,6 @@ namespace ProjectEVE.Editor.CombatTimeline
             GUI.Label(labelRect, clip.Name, EditorStyles.miniLabel);
         }
 
-        /// <summary>
-        /// 绘制 Animation / Preview / Clip 调试或编辑器界面，不改变核心战斗运行时语义。
-        /// </summary>
         private void DrawAnimationPreviewClip(CombatAnimationClipWindow animation, Rect rect)
         {
             Color overflowColor = new Color(0.23f, 0.24f, 0.27f);
@@ -1055,9 +969,6 @@ namespace ProjectEVE.Editor.CombatTimeline
                 rect.height);
             EditorGUI.DrawRect(validRect, timelineColor);
         }
-        /// <summary>
-        /// 绘制 Clip / Frame 调试或编辑器界面，不改变核心战斗运行时语义。
-        /// </summary>
         private static void DrawClipFrame(Rect rect, bool selected)
         {
             EditorGUI.DrawRect(new Rect(rect.x, rect.y, rect.width, 1f), new Color(1f, 1f, 1f, selected ? 0.75f : 0.28f));
@@ -1077,10 +988,6 @@ namespace ProjectEVE.Editor.CombatTimeline
             EditorGUI.DrawRect(new Rect(rect.xMax - 2f, rect.y, 2f, rect.height), outline);
         }
 
-
-        /// <summary>
-        /// 绘制 Clip / Drag / Handles 调试或编辑器界面，不改变核心战斗运行时语义。
-        /// </summary>
         private void DrawClipDragHandles(CombatTimelineClip clip, Rect rect)
         {
             bool lengthLocked = IsLengthLockedClip(clip);
@@ -1161,10 +1068,6 @@ namespace ProjectEVE.Editor.CombatTimeline
                 current.Use();
             }
         }
-
-        /// <summary>
-        /// 执行 Hit / Test / Clip 相关逻辑，并维护 Combat Timeline 编辑器 模块的运行时一致性。
-        /// </summary>
         private ClipDrawLayout HitTestClip(Vector2 mousePosition)
         {
             for (int i = visibleClipLayouts.Count - 1; i >= 0; i--)
@@ -1178,10 +1081,6 @@ namespace ProjectEVE.Editor.CombatTimeline
 
             return null;
         }
-
-        /// <summary>
-        /// 执行 Determine / Drag / Mode 相关逻辑，并维护 Combat Timeline 编辑器 模块的运行时一致性。
-        /// </summary>
         private static TimelineDragMode DetermineDragMode(ClipDrawLayout hit, Vector2 mousePosition)
         {
             CombatTimelineClip clip = hit.Clip;
@@ -1208,17 +1107,11 @@ namespace ProjectEVE.Editor.CombatTimeline
                     : TimelineDragMode.Move;
         }
 
-        /// <summary>
-        /// 获取 Animation / Source / Start / Handle / Rect 数据，作为运行时逻辑、调试显示或编辑器界面的只读输入。
-        /// </summary>
         private static Rect GetAnimationSourceStartHandleRect(Rect rect)
         {
             return new Rect(rect.x, rect.y, Mathf.Min(AnimationSourceHandleWidth, rect.width * 0.5f), rect.height);
         }
 
-        /// <summary>
-        /// 获取 Animation / Source / End / Handle / Rect 数据，作为运行时逻辑、调试显示或编辑器界面的只读输入。
-        /// </summary>
         private static Rect GetAnimationSourceEndHandleRect(Rect rect)
         {
             float width = Mathf.Min(AnimationSourceHandleWidth, rect.width * 0.5f);
@@ -1286,10 +1179,6 @@ namespace ProjectEVE.Editor.CombatTimeline
 
             MarkTimelineChanged();
         }
-
-        /// <summary>
-        /// 绘制 Playhead 调试或编辑器界面，不改变核心战斗运行时语义。
-        /// </summary>
         private void DrawPlayhead(Rect area)
         {
             Rect ruler = GetRulerRect(area);
@@ -1304,9 +1193,6 @@ namespace ProjectEVE.Editor.CombatTimeline
                 new Vector3(x, ruler.y + 8f));
         }
 
-        /// <summary>
-        /// 绘制 Inspector 调试或编辑器界面，不改变核心战斗运行时语义。
-        /// </summary>
         private void DrawInspector()
         {
             EditorGUILayout.LabelField("Inspector", EditorStyles.boldLabel);
@@ -1324,10 +1210,6 @@ namespace ProjectEVE.Editor.CombatTimeline
 
             EditorGUILayout.EndScrollView();
         }
-
-        /// <summary>
-        /// 绘制 Asset / Inspector 调试或编辑器界面，不改变核心战斗运行时语义。
-        /// </summary>
         private void DrawAssetInspector()
         {
             EditorGUI.BeginDisabledGroup(true);
@@ -1364,9 +1246,6 @@ namespace ProjectEVE.Editor.CombatTimeline
             }
         }
 
-        /// <summary>
-        /// 绘制 Timeline / Frame / Model / Inspector 调试或编辑器界面，不改变核心战斗运行时语义。
-        /// </summary>
         private void DrawTimelineFrameModelInspector()
         {
             EditorGUI.BeginChangeCheck();
@@ -1402,9 +1281,6 @@ namespace ProjectEVE.Editor.CombatTimeline
             EditorGUILayout.HelpBox("Duration is derived from Total Frames / Frame Rate. Changing Duration, Total Frames, or Frame Rate keeps clip Start/End seconds unchanged; displayed frame numbers are recalculated from the current Frame Rate.", MessageType.Info);
         }
 
-        /// <summary>
-        /// 绘制 Clip / Inspector 调试或编辑器界面，不改变核心战斗运行时语义。
-        /// </summary>
         private void DrawClipInspector()
         {
             if (selectedClip == null)
@@ -1497,10 +1373,6 @@ namespace ProjectEVE.Editor.CombatTimeline
                 EditorGUILayout.HelpBox("Runtime reads explicit CapabilityId. CapabilityKind is only used for clip family grouping.", MessageType.Info);
             }
         }
-
-        /// <summary>
-        /// 绘制 Hit / Clip 调试或编辑器界面，不改变核心战斗运行时语义。
-        /// </summary>
         private void DrawHitClip(CombatHitNodeClip hit)
         {
             GUILayout.Space(6f);
@@ -1519,10 +1391,6 @@ namespace ProjectEVE.Editor.CombatTimeline
             hit.EffectiveAngle = EditorGUILayout.FloatField("Effective Angle", hit.EffectiveAngle);
             hit.TriggersPerfectGuardBossStagger = EditorGUILayout.Toggle("PG Stagger Boss", hit.TriggersPerfectGuardBossStagger);
         }
-
-        /// <summary>
-        /// 绘制 Motion / Reference / Clip 调试或编辑器界面，不改变核心战斗运行时语义。
-        /// </summary>
         private void DrawMotionReferenceClip(CombatMotionReferenceClip motion)
         {
             GUILayout.Space(6f);
@@ -1544,10 +1412,6 @@ namespace ProjectEVE.Editor.CombatTimeline
 
             EditorGUILayout.EndHorizontal();
         }
-
-        /// <summary>
-        /// 绘制 Reaction / Clip 调试或编辑器界面，不改变核心战斗运行时语义。
-        /// </summary>
         private void DrawReactionClip(CombatReactionWindowClip reaction)
         {
             GUILayout.Space(6f);
@@ -1594,10 +1458,6 @@ namespace ProjectEVE.Editor.CombatTimeline
 
             return selected.ToArray();
         }
-
-        /// <summary>
-        /// 绘制 Animation / Clip 调试或编辑器界面，不改变核心战斗运行时语义。
-        /// </summary>
         private void DrawAnimationClip(CombatAnimationClipWindow animation)
         {
             GUILayout.Space(6f);
@@ -1661,19 +1521,11 @@ namespace ProjectEVE.Editor.CombatTimeline
             return playheadTime >= animation.StartTime - 0.0001f && playheadTime <= GetClipDisplayEndTime(animation) + 0.0001f;
         }
 
-        /// <summary>
-        /// 获取 Animation / Window / Local / Time 数据，作为运行时逻辑、调试显示或编辑器界面的只读输入。
-        /// </summary>
         private float GetAnimationWindowLocalTime(CombatAnimationClipWindow animation)
         {
             return Mathf.Max(0f, playheadTime - animation.StartTime);
         }
 
-
-
-        /// <summary>
-        /// 获取 Clip / Display / End / Time 数据，作为运行时逻辑、调试显示或编辑器界面的只读输入。
-        /// </summary>
         private float GetClipDisplayEndTime(CombatTimelineClip clip)
         {
             if (clip is CombatAnimationClipWindow animation)
@@ -1683,10 +1535,6 @@ namespace ProjectEVE.Editor.CombatTimeline
 
             return clip.EndTime;
         }
-
-        /// <summary>
-        /// 获取 Animation / Source / Duration 数据，作为运行时逻辑、调试显示或编辑器界面的只读输入。
-        /// </summary>
         private float GetAnimationSourceDuration(CombatAnimationClipWindow animation)
         {
             float minDuration = 1f / GetFrameRate();
@@ -1706,9 +1554,6 @@ namespace ProjectEVE.Editor.CombatTimeline
             return Mathf.Max(minDuration, sourceDuration / speed);
         }
 
-        /// <summary>
-        /// 获取 Animation / Source / End / Offset 数据，作为运行时逻辑、调试显示或编辑器界面的只读输入。
-        /// </summary>
         private float GetAnimationSourceEndOffset(CombatAnimationClipWindow animation)
         {
             if (animation?.PreviewAnimationClip == null || animation.PreviewAnimationClip.length <= 0.001f)
@@ -1723,10 +1568,6 @@ namespace ProjectEVE.Editor.CombatTimeline
 
             return Mathf.Clamp(animation.ClipEndOffset, 0f, animation.PreviewAnimationClip.length);
         }
-
-        /// <summary>
-        /// 执行 Clamp / Animation / Clip / Start / Offset 相关逻辑，并维护 Combat Timeline 编辑器 模块的运行时一致性。
-        /// </summary>
         private float ClampAnimationClipStartOffset(CombatAnimationClipWindow animation, float value)
         {
             if (animation == null)
@@ -1743,10 +1584,6 @@ namespace ProjectEVE.Editor.CombatTimeline
 
             return Mathf.Clamp(value, 0f, Mathf.Max(0f, sourceEnd - minSourceDuration));
         }
-
-        /// <summary>
-        /// 执行 Clamp / Animation / Clip / End / Offset 相关逻辑，并维护 Combat Timeline 编辑器 模块的运行时一致性。
-        /// </summary>
         private float ClampAnimationClipEndOffset(CombatAnimationClipWindow animation, float value)
         {
             if (animation == null)
@@ -1763,10 +1600,6 @@ namespace ProjectEVE.Editor.CombatTimeline
 
             return Mathf.Clamp(value, minEnd, animation.PreviewAnimationClip.length);
         }
-
-        /// <summary>
-        /// 执行 Normalize / Animation / Source / Offsets 相关逻辑，并维护 Combat Timeline 编辑器 模块的运行时一致性。
-        /// </summary>
         private void NormalizeAnimationSourceOffsets(CombatAnimationClipWindow animation)
         {
             if (animation == null)
@@ -1779,10 +1612,6 @@ namespace ProjectEVE.Editor.CombatTimeline
             animation.ClipStartOffset = ClampAnimationClipStartOffset(animation, animation.ClipStartOffset);
             animation.ClipEndOffset = ClampAnimationClipEndOffset(animation, sourceEnd);
         }
-
-        /// <summary>
-        /// 执行 Normalize / Animation / Window / End 相关逻辑，并维护 Combat Timeline 编辑器 模块的运行时一致性。
-        /// </summary>
         private void NormalizeAnimationWindowEnd(CombatAnimationClipWindow animation)
         {
             if (animation == null || selectedTimeline == null)
@@ -1794,9 +1623,7 @@ namespace ProjectEVE.Editor.CombatTimeline
             NormalizeAnimationSourceOffsets(animation);
             animation.EndTime = animation.StartTime + GetAnimationSourceDuration(animation);
         }
-        /// <summary>
-        /// 执行 Time / Field 相关逻辑，并维护 Combat Timeline 编辑器 模块的运行时一致性。
-        /// </summary>
+
         private float TimeField(string label, float value)
         {
             if (timeDisplayMode == TimelineTimeDisplayMode.Frames)
@@ -1817,9 +1644,6 @@ namespace ProjectEVE.Editor.CombatTimeline
             return Mathf.Max(0f, value);
         }
 
-        /// <summary>
-        /// 执行 Read / Only / Time / Field 相关逻辑，并维护 Combat Timeline 编辑器 模块的运行时一致性。
-        /// </summary>
         private void ReadOnlyTimeField(string label, float value)
         {
             if (timeDisplayMode == TimelineTimeDisplayMode.Frames)
@@ -1832,67 +1656,37 @@ namespace ProjectEVE.Editor.CombatTimeline
             }
         }
 
-
-        /// <summary>
-        /// 执行 Snap / Time 相关逻辑，并维护 Combat Timeline 编辑器 模块的运行时一致性。
-        /// </summary>
         private float SnapTime(float value)
         {
             return snapToFrame ? SnapToFrame(value) : Mathf.Max(0f, value);
         }
 
-        /// <summary>
-        /// 执行 Snap / To / Frame 相关逻辑，并维护 Combat Timeline 编辑器 模块的运行时一致性。
-        /// </summary>
         private float SnapToFrame(float value)
         {
             float frameRate = GetFrameRate();
             return Mathf.Max(0f, Mathf.Round(value * frameRate) / frameRate);
         }
-
-        /// <summary>
-        /// 执行 Time / To / Frame 相关逻辑，并维护 Combat Timeline 编辑器 模块的运行时一致性。
-        /// </summary>
         private int TimeToFrame(float time)
         {
             return Mathf.RoundToInt(Mathf.Max(0f, time) * GetFrameRate());
         }
-
-        /// <summary>
-        /// 执行 Frame / To / Time 相关逻辑，并维护 Combat Timeline 编辑器 模块的运行时一致性。
-        /// </summary>
         private float FrameToTime(int frame)
         {
             return Mathf.Max(0, frame) / GetFrameRate();
         }
 
-        /// <summary>
-        /// 获取 Frame / Rate 数据，作为运行时逻辑、调试显示或编辑器界面的只读输入。
-        /// </summary>
         private float GetFrameRate()
         {
             return Mathf.Max(1f, selectedTimeline != null ? selectedTimeline.FrameRate : 60f);
         }
-
-        /// <summary>
-        /// 执行 Format / Timeline / Time 相关逻辑，并维护 Combat Timeline 编辑器 模块的运行时一致性。
-        /// </summary>
         private string FormatTimelineTime(float time)
         {
             return timeDisplayMode == TimelineTimeDisplayMode.Frames ? $"{TimeToFrame(time)}f" : $"{time:0.00}s";
         }
-
-        /// <summary>
-        /// 获取 Ruler / Rect 数据，作为运行时逻辑、调试显示或编辑器界面的只读输入。
-        /// </summary>
         private static Rect GetRulerRect(Rect area)
         {
             return new Rect(area.x + 110f, area.y, area.width - 120f, 22f);
         }
-
-        /// <summary>
-        /// 执行 Calculate / Frame / Label / Step 相关逻辑，并维护 Combat Timeline 编辑器 模块的运行时一致性。
-        /// </summary>
         private static int CalculateFrameLabelStep(float framePixelWidth)
         {
             if (framePixelWidth >= 18f)
@@ -1913,18 +1707,10 @@ namespace ProjectEVE.Editor.CombatTimeline
             return 30;
         }
 
-
-        /// <summary>
-        /// 判断当前对象是否处于 Length / Locked / Clip 状态，避免调用方直接读取内部实现细节。
-        /// </summary>
         private static bool IsLengthLockedClip(CombatTimelineClip clip)
         {
             return clip is CombatAnimationClipWindow;
         }
-
-        /// <summary>
-        /// 绘制 Validation 调试或编辑器界面，不改变核心战斗运行时语义。
-        /// </summary>
         private void DrawValidation()
         {
             if (Event.current.type == EventType.Layout)
@@ -1983,9 +1769,6 @@ namespace ProjectEVE.Editor.CombatTimeline
             GUILayout.Label($"{prefix}: {message}", EditorStyles.helpBox);
         }
 
-        /// <summary>
-        /// 执行 Timeline / Has / Overlapping / Clips 相关逻辑，并维护 Combat Timeline 编辑器 模块的运行时一致性。
-        /// </summary>
         private bool TimelineHasOverlappingClips(CombatTimelineActionAsset timeline)
         {
             if (timeline?.Tracks == null)
@@ -2004,10 +1787,6 @@ namespace ProjectEVE.Editor.CombatTimeline
             return false;
         }
 
-
-        /// <summary>
-        /// 刷新 Timelines 数据，使显示、缓存或运行时状态与当前配置保持一致。
-        /// </summary>
         private void RefreshTimelines()
         {
             timelines.Clear();
@@ -2055,9 +1834,6 @@ namespace ProjectEVE.Editor.CombatTimeline
             Repaint();
         }
 
-        /// <summary>
-        /// 添加 Timeline / Asset / Guids 数据，并维护集合、缓存或运行时状态的一致性。
-        /// </summary>
         private static void AddTimelineAssetGuids(HashSet<string> destination)
         {
             AddAssetGuids("t:PlayerAttackTimelineAsset", destination);
@@ -2069,9 +1845,6 @@ namespace ProjectEVE.Editor.CombatTimeline
             AddAssetGuids("t:BossReactionTimelineAsset", destination);
         }
 
-        /// <summary>
-        /// 添加 Asset / Guids 数据，并维护集合、缓存或运行时状态的一致性。
-        /// </summary>
         private static void AddAssetGuids(string filter, HashSet<string> destination)
         {
             string[] foundGuids = AssetDatabase.FindAssets(filter, new[] { "Assets/ScriptableObjects/CombatTimelines" });
@@ -2080,10 +1853,6 @@ namespace ProjectEVE.Editor.CombatTimeline
                 destination.Add(foundGuids[i]);
             }
         }
-
-        /// <summary>
-        /// 执行 Select / Timeline 相关逻辑，并维护 Combat Timeline 编辑器 模块的运行时一致性。
-        /// </summary>
         private void SelectTimeline(CombatTimelineActionAsset timeline)
         {
             if (selectedTimeline != timeline && editModePreview)
@@ -2113,9 +1882,6 @@ namespace ProjectEVE.Editor.CombatTimeline
             }
         }
 
-        /// <summary>
-        /// 处理 Timeline / Keys 事件或输入，并把结果分发到对应运行时系统。
-        /// </summary>
         private void HandleTimelineKeys()
         {
             Event current = Event.current;
@@ -2177,10 +1943,6 @@ namespace ProjectEVE.Editor.CombatTimeline
         {
             return current.control || current.command;
         }
-
-        /// <summary>
-        /// 执行 Delete / Selected / Clip 相关逻辑，并维护 Combat Timeline 编辑器 模块的运行时一致性。
-        /// </summary>
         private void DeleteSelectedClip()
         {
             foreach (CombatTimelineTrack track in selectedTimeline.Tracks ?? Array.Empty<CombatTimelineTrack>())
@@ -2207,9 +1969,6 @@ namespace ProjectEVE.Editor.CombatTimeline
             }
         }
 
-        /// <summary>
-        /// 执行 Paste / Clip 相关逻辑，并维护 Combat Timeline 编辑器 模块的运行时一致性。
-        /// </summary>
         private void PasteClip()
         {
             CombatTimelineTrack[] tracks = selectedTimeline.Tracks;
@@ -2234,10 +1993,6 @@ namespace ProjectEVE.Editor.CombatTimeline
             selectedClip = clone;
             MarkTimelineChanged();
         }
-
-        /// <summary>
-        /// 执行 Sample / Preview 相关逻辑，并维护 Combat Timeline 编辑器 模块的运行时一致性。
-        /// </summary>
         private void SamplePreview()
         {
             previewStatusMessage = null;
@@ -2282,10 +2037,6 @@ namespace ProjectEVE.Editor.CombatTimeline
 
             SceneView.RepaintAll();
         }
-
-        /// <summary>
-        /// 解析 Active / Animation / Preview / Window 结果，并把多来源输入收敛为后续逻辑可直接消费的数据。
-        /// </summary>
         private CombatAnimationClipWindow ResolveAnimationPreviewWindowForPlayback()
         {
             if (selectedTimeline == null)
@@ -2308,9 +2059,6 @@ namespace ProjectEVE.Editor.CombatTimeline
             return ResolveTopmostAnimationPreviewWindow() ?? ResolveFirstAnimationPreviewWindow();
         }
 
-        /// <summary>
-        /// 解析 Topmost / Animation / Preview / Window 结果，并保持预览选择与可点击层级一致。
-        /// </summary>
         private CombatAnimationClipWindow ResolveTopmostAnimationPreviewWindow()
         {
             for (int i = visibleClipLayouts.Count - 1; i >= 0; i--)
@@ -2324,9 +2072,6 @@ namespace ProjectEVE.Editor.CombatTimeline
             return null;
         }
 
-        /// <summary>
-        /// 解析 First / Animation / Preview / Window 结果，作为可见布局尚未构建时的稳定兜底。
-        /// </summary>
         private CombatAnimationClipWindow ResolveFirstAnimationPreviewWindow()
         {
             foreach (CombatAnimationClipWindow animationWindow in selectedTimeline.EnumerateClips<CombatAnimationClipWindow>())
@@ -2339,10 +2084,6 @@ namespace ProjectEVE.Editor.CombatTimeline
 
             return null;
         }
-
-        /// <summary>
-        /// 清理 Animation / Preview / Cache 数据，避免删除或切换 Timeline 后继续采样悬挂引用。
-        /// </summary>
         private void ClearInvalidAnimationPreviewCache()
         {
             if (!IsValidAnimationPreviewWindow(lastSampledAnimationPreviewClip))
@@ -2357,19 +2098,12 @@ namespace ProjectEVE.Editor.CombatTimeline
             }
         }
 
-        /// <summary>
-        /// 判断 Animation / Preview / Window 是否可用于实际采样。
-        /// </summary>
         private bool IsValidAnimationPreviewWindow(CombatAnimationClipWindow animationWindow)
         {
             return animationWindow != null
                 && animationWindow.PreviewAnimationClip != null
                 && SelectedTimelineContainsClip(animationWindow);
         }
-
-        /// <summary>
-        /// 判断当前 Timeline 是否仍持有指定 Clip，避免使用已删除或其他资产上的引用。
-        /// </summary>
         private bool SelectedTimelineContainsClip(CombatTimelineClip targetClip)
         {
             if (selectedTimeline == null || targetClip == null)
@@ -2387,10 +2121,6 @@ namespace ProjectEVE.Editor.CombatTimeline
 
             return false;
         }
-
-        /// <summary>
-        /// 执行 Calculate / Animation / Sample / Time 相关逻辑，并维护 Combat Timeline 编辑器 模块的运行时一致性。
-        /// </summary>
         private float CalculateAnimationSampleTime(CombatAnimationClipWindow animationWindow, AnimationClip clip)
         {
             float localTime = Mathf.Max(0f, playheadTime - animationWindow.StartTime);
@@ -2400,9 +2130,6 @@ namespace ProjectEVE.Editor.CombatTimeline
             return ClampOrLoopSampleTime(sampleTime, clip, animationWindow.LoopPreview, sourceStart, sourceEnd);
         }
 
-        /// <summary>
-        /// 执行 Clamp / Or / Loop / Sample / Time 相关逻辑，并维护 Combat Timeline 编辑器 模块的运行时一致性。
-        /// </summary>
         private static float ClampOrLoopSampleTime(float sampleTime, AnimationClip clip, bool loop)
         {
             if (clip == null || clip.length <= 0.001f)
@@ -2413,9 +2140,6 @@ namespace ProjectEVE.Editor.CombatTimeline
             return loop ? Mathf.Repeat(sampleTime, clip.length) : Mathf.Clamp(sampleTime, 0f, clip.length);
         }
 
-        /// <summary>
-        /// 执行 Clamp / Or / Loop / Sample / Time 相关逻辑，并维护 Combat Timeline 编辑器 模块的运行时一致性。
-        /// </summary>
         private static float ClampOrLoopSampleTime(float sampleTime, AnimationClip clip, bool loop, float sourceStart, float sourceEnd)
         {
             if (clip == null || clip.length <= 0.001f)
@@ -2431,11 +2155,6 @@ namespace ProjectEVE.Editor.CombatTimeline
                 : Mathf.Clamp(sampleTime, sourceStart, sourceEnd);
         }
 
-
-
-        /// <summary>
-        /// 解析 Preview / Target 结果，并把多来源输入收敛为后续逻辑可直接消费的数据。
-        /// </summary>
         private GameObject ResolvePreviewTarget()
         {
             if (selectedTimeline == null)
@@ -2455,9 +2174,6 @@ namespace ProjectEVE.Editor.CombatTimeline
             return animator != null ? animator.gameObject : null;
         }
 
-        /// <summary>
-        /// 停止 Preview 流程，并清理当前动作、位移或显示状态。
-        /// </summary>
         private void StopPreview()
         {
             if (AnimationMode.InAnimationMode())
@@ -2469,9 +2185,6 @@ namespace ProjectEVE.Editor.CombatTimeline
             lastSampledAnimationPreviewClip = null;
         }
 
-        /// <summary>
-        /// 执行 Ping / First / Asset 相关逻辑，并维护 Combat Timeline 编辑器 模块的运行时一致性。
-        /// </summary>
         private static void PingFirstAsset(string filter)
         {
             string[] guids = AssetDatabase.FindAssets(filter, new[] { "Assets" });
@@ -2487,10 +2200,6 @@ namespace ProjectEVE.Editor.CombatTimeline
                 EditorGUIUtility.PingObject(asset);
             }
         }
-
-        /// <summary>
-        /// 执行 Clone / Clip 相关逻辑，并维护 Combat Timeline 编辑器 模块的运行时一致性。
-        /// </summary>
         private static CombatTimelineClip CloneClip(CombatTimelineClip source, bool appendCopySuffix = true)
         {
             CombatTimelineClip clone = source switch
@@ -2597,19 +2306,13 @@ namespace ProjectEVE.Editor.CombatTimeline
             target.StartTime = source.StartTime;
             target.EndTime = source.EndTime;
         }
-
-        /// <summary>
-        /// 执行 Copy / Phase 相关逻辑，并维护 Combat Timeline 编辑器 模块的运行时一致性。
-        /// </summary>
         private static CombatPhaseClip CopyPhase(CombatPhaseClip source)
         {
             CombatPhaseClip target = CopyBase(source, new CombatPhaseClip());
             target.Phase = source.Phase;
             return target;
         }
-        /// <summary>
-        /// 执行 Copy / Hit 相关逻辑，并维护 Combat Timeline 编辑器 模块的运行时一致性。
-        /// </summary>
+
         private static CombatHitNodeClip CopyHit(CombatHitNodeClip source)
         {
             CombatHitNodeClip target = CopyBase(source, new CombatHitNodeClip());
@@ -2630,9 +2333,6 @@ namespace ProjectEVE.Editor.CombatTimeline
             return target;
         }
 
-        /// <summary>
-        /// 执行 Copy / Reaction 相关逻辑，并维护 Combat Timeline 编辑器 模块的运行时一致性。
-        /// </summary>
         private static CombatReactionWindowClip CopyReaction(CombatReactionWindowClip source)
         {
             CombatReactionWindowClip target = CopyBase(source, new CombatReactionWindowClip());
@@ -2656,9 +2356,6 @@ namespace ProjectEVE.Editor.CombatTimeline
             return target;
         }
 
-        /// <summary>
-        /// 执行 Copy / Motion 相关逻辑，并维护 Combat Timeline 编辑器 模块的运行时一致性。
-        /// </summary>
         private static CombatMotionReferenceClip CopyMotion(CombatMotionReferenceClip source)
         {
             CombatMotionReferenceClip target = CopyBase(source, new CombatMotionReferenceClip());
@@ -2669,9 +2366,6 @@ namespace ProjectEVE.Editor.CombatTimeline
             return target;
         }
 
-        /// <summary>
-        /// 执行 Copy / Animation 相关逻辑，并维护 Combat Timeline 编辑器 模块的运行时一致性。
-        /// </summary>
         private static CombatAnimationClipWindow CopyAnimation(CombatAnimationClipWindow source)
         {
             CombatAnimationClipWindow target = CopyBase(source, new CombatAnimationClipWindow());
@@ -2684,9 +2378,6 @@ namespace ProjectEVE.Editor.CombatTimeline
             return target;
         }
 
-        /// <summary>
-        /// 执行 Copy / Marker 相关逻辑，并维护 Combat Timeline 编辑器 模块的运行时一致性。
-        /// </summary>
         private static CombatMarkerClip CopyMarker(CombatMarkerClip source)
         {
             CombatMarkerClip target = CopyBase(source, new CombatMarkerClip());
@@ -2694,9 +2385,6 @@ namespace ProjectEVE.Editor.CombatTimeline
             return target;
         }
 
-        /// <summary>
-        /// 执行 Clip / Color 相关逻辑，并维护 Combat Timeline 编辑器 模块的运行时一致性。
-        /// </summary>
         private static Color ClipColor(CombatTimelineClip clip)
         {
             Color baseColor = clip.ClipKind switch
@@ -2724,9 +2412,6 @@ namespace ProjectEVE.Editor.CombatTimeline
             return VaryClipColor(baseColor, clip);
         }
 
-        /// <summary>
-        /// 执行 Phase / Clip / Color 相关逻辑，并维护 Combat Timeline 编辑器 模块的运行时一致性。
-        /// </summary>
         private static Color PhaseClipColor(CombatTimelineClip clip)
         {
             string name = clip.Name ?? string.Empty;
@@ -2753,9 +2438,6 @@ namespace ProjectEVE.Editor.CombatTimeline
             return VaryClipColor(new Color(0.45f, 0.45f, 0.45f), clip);
         }
 
-        /// <summary>
-        /// 执行 Vary / Clip / Color 相关逻辑，并维护 Combat Timeline 编辑器 模块的运行时一致性。
-        /// </summary>
         private static Color VaryClipColor(Color color, CombatTimelineClip clip)
         {
             Color.RGBToHSV(color, out float h, out float s, out float v);
@@ -2767,9 +2449,6 @@ namespace ProjectEVE.Editor.CombatTimeline
             return Color.HSVToRGB(h, s, v);
         }
 
-        /// <summary>
-        /// 执行 Stable / Hash 相关逻辑，并维护 Combat Timeline 编辑器 模块的运行时一致性。
-        /// </summary>
         private static int StableHash(string value)
         {
             unchecked

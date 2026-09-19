@@ -225,9 +225,7 @@ namespace ProjectEVE.Combat.Timeline
             return messages;
         }
 
-        /// <summary>
-        /// 执行 Format / Clip / Exceeds / Duration / Message 相关逻辑，并维护 Combat Timeline 模块的运行时一致性。
-        /// </summary>
+
         private static string FormatClipExceedsDurationMessage(CombatTimelineClip clip, CombatTimelineActionAsset timeline)
         {
             float frameRate = Mathf.Max(1f, timeline.FrameRate);

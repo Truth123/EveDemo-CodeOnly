@@ -25,9 +25,7 @@ namespace ProjectEVE.UI.Demo
 
         private readonly List<Image> segments = new List<Image>();
 
-        /// <summary>
-        /// 执行 Configure 相关逻辑，并维护 战斗 UI 模块的运行时一致性。
-        /// </summary>
+
         public void Configure(
             int count,
             int group,
@@ -45,9 +43,7 @@ namespace ProjectEVE.UI.Demo
             Rebuild();
         }
 
-        /// <summary>
-        /// 设置 Value 数据，并同步必要的运行时缓存或调试状态。
-        /// </summary>
+
         public void SetValue(float current, float max, bool hideWhenInvalid = true)
         {
             bool valid = max > 0f;
@@ -66,9 +62,6 @@ namespace ProjectEVE.UI.Demo
             }
         }
 
-        /// <summary>
-        /// 执行 Rebuild 相关逻辑，并维护 战斗 UI 模块的运行时一致性。
-        /// </summary>
         private void Rebuild()
         {
             if (segmentRoot == null)
@@ -107,9 +100,6 @@ namespace ProjectEVE.UI.Demo
             segmentRoot.SetSizeWithCurrentAnchors(RectTransform.Axis.Vertical, segmentSize.y);
         }
 
-        /// <summary>
-        /// 清理 Segments 相关运行时状态，防止旧动作、旧窗口或旧命中结果泄漏到后续流程。
-        /// </summary>
         private void ClearSegments()
         {
             segments.Clear();

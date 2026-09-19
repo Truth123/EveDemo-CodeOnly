@@ -12,16 +12,12 @@ namespace ProjectEVE.Player.States
         /// <summary>死亡 Timeline 资产 ID。死亡生命周期仍由 Dead 状态自身维护。</summary>
         public const string TimelineId = "Player_Dead";
 
-        /// <summary>
-        /// 创建 PlayerDeadState 实例，并准备 玩家状态机 模块需要的初始状态。
-        /// </summary>
+
         public PlayerDeadState() : base(PlayerStateId.Dead)
         {
         }
 
-        /// <summary>
-        /// 执行 Enter 相关逻辑，并维护 玩家状态机 模块的运行时一致性。
-        /// </summary>
+
         public override void Enter(PlayerStateContext context)
         {
             context.IsDead = true;
